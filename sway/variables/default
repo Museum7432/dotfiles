@@ -1,0 +1,29 @@
+
+set $conf_dir $HOME/randoms_dotfiles
+
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+
+set $term kitty
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu wofi --show=drun -i
+set $menu_cmd j4-dmenu-desktop --dmenu='bemenu -b -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20' --term='kitty' --no-generic --usage-log=$HOME/.cache_persistent/menu_usage_log | xargs swaymsg exec --
+
+set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
+
+
+# select wallpaper
+
+set $wallpaper $(find ~/Pictures/wallpapers -type f | shuf -n 1)
+
+set $screenshot_path ~/Pictures/cloud/screenshots/ps_$(date +"%Y%m%d%H%M%S").png

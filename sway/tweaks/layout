@@ -1,0 +1,34 @@
+
+set $tray_ic floating enable, move position cursor, move up 20px, sticky true
+
+for_window [app_id="nm-connection-editor"] $tray_ic
+for_window [app_id="pavucontrol"] floating enable, resize set 500 700,  $tray_ic
+for_window [app_id="blueman-manager"]  $tray_ic
+
+for_window [app_id="org.fcitx.fcitx5-config-qt"]  $tray_ic
+
+
+for_window [app_id="filen-desktop"] $tray_ic
+for_window [app_id="Mullvad VPN"] $tray_ic
+
+input type:keyboard xkb_numlock enabled
+
+for_window [title="Firefox - Choose User Profile"] floating enable
+
+for_window [title="Picture-in-Picture"] floating enable, sticky true
+
+for_window [title="Firefox — Sharing Indicator"] floating enable
+
+# for_window [title="^(File|Folder)\s*Already Exists\s*—\s*" app_id="dolphin|org.kde.ark"] floating enable
+# for_window [title="^(Copying|Moving)\s*—\s*Dolphin" app_id="dolphin"] floating enable
+# for_window [title="^Extracting\s" app_id="(dolphin|org.kde.ark)"] floating enable
+# for_window [title="^Information\s*—\s*Dolphin" app_id="dolphin"] floating enable
+# for_window [title="^Loading archive" app_id="org.kde.ark"] floating enable
+
+for_window [title="^(Copying|Moving|Compressing|Extracting).*— Dolphin$"] floating enable, resize set 500 100
+
+for_window [title="^(File|Folder)\s*Already Exists\s*—\s*"] floating enable
+for_window [title="^Information\s*—\s*Dolphin"] floating enable
+for_window [app_id="org.kde.ark"] floating enable
+
+for_window [title="Session Chooser — Kate"] floating enable

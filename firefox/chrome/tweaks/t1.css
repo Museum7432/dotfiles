@@ -1,0 +1,42 @@
+:root {
+  /* add rounding */
+/*   --uc-border-radius: 11px; */
+
+  --uc-toolbar-position: 4;
+
+  --show-tab-close-button-hover: -moz-inline-block;
+}
+
+/* Hide the »Go«-arrow in the URL Bar */
+/* #urlbar-go-button { display: none !important; } */
+
+
+/* #identity-permission-box { display: -moz-box !important; } */
+
+/* this may always show the extensions button*/
+#unified-extensions-button {
+  display: -moz-box !important;
+}
+
+/* .urlbarView-row[selected] > .urlbarView-row-inner {
+  background: var(--lwt-selected-tab-background-color) !important;
+} */
+
+.urlbarView-row[selected] > .urlbarView-row-inner {
+  background: transparent !important;
+}
+
+/* only show Navigation Buttons when available */
+#back-button[disabled="true"],
+#forward-button[disabled="true"] {
+  display: none;
+}
+
+:root {
+  /*  Width of the URL Bar for the Oneline layout
+   *  If enabled the max-width is applied on focus
+   *  otherwise the URL Bar will always be it's min-width
+   */
+  --uc-urlbar-min-width: 30vw;
+  --uc-urlbar-max-width: 35vw;
+}

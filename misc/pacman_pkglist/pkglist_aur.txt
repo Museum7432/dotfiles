@@ -1,0 +1,6 @@
+envycontrol
+galaxybudsclient-bin
+ivpn
+ivpn-ui
+pyenv-virtualenv
+syncthingtray

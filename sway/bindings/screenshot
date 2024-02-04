@@ -1,0 +1,13 @@
+
+#
+# Screen capture
+#
+
+set $selected_cmd grim -g "$(slurp)" $screenshot_path
+set $whole_cmd grim $screenshot_path
+# selected
+bindsym $mod+Print exec $selected_cmd
+# mod+'
+bindcode $mod+49 exec $selected_cmd
+# whole screen
+bindsym $mod+shift+Print exec $whole_cmd

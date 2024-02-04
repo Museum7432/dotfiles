@@ -1,0 +1,18 @@
+# include files in this folder
+
+include ./basic
+include ./navigation
+include ./layout
+
+include ./brightness
+include ./volume
+
+include ./screenshot
+
+include ./firefox
+
+include ./powermenu
+
+include ./display
+
+include ./envycontrol

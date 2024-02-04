@@ -1,0 +1,161 @@
+{
+  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 20, // Waybar height (to be removed for auto height)
+  // Choose the order of the modules
+  "modules-left": [
+    "memory",
+    "cpu",
+    "custom/envyctl",
+    "sway/window"
+  ],
+  "modules-center": [
+    "idle_inhibitor",
+    "sway/workspaces",
+    "sway/mode",
+    "sway/scratchpad"
+  ],
+  "modules-right": [
+    "network",
+    "privacy",
+    "tray",
+    "pulseaudio",
+    "battery",
+    "clock",
+    "backlight"
+  ],
+  // Modules configuration
+  "network": {
+    "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format-disconnected": "",
+    "interval": 3
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 7
+  },
+  "clock": {
+    "format": "{:%a, %d, %b %I:%M %p}",
+    // "timezone": "America/New_York",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+  "cpu": {
+    "interval": 3,
+    "format": "{usage} %",
+    "max-length": 10
+  },
+  "memory": {
+    "format": "{used}GiB",
+    "tooltip-format":"{avail}GiB available"
+  },
+  "backlight": {
+    "format": "{icon} {percent}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format":"{percent} %"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}{volume:2}",
+    "format-bluetooth": "{icon} {volume} ",
+    "format-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "scroll-step": 2,
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol -t 3"
+  },
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 60,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1"
+    }
+  },
+  "sway/scratchpad": {
+    "format": "{icon} {count}",
+    "show-empty": false,
+    "format-icons": [
+      "",
+      ""
+    ],
+    "tooltip": true,
+    "tooltip-format": "{app}: {title}"
+  },
+  "custom/envyctl": {
+    "exec": "case $(envycontrol -q) in 'integrated') echo integrated ;; 'nvidia') echo nvidia ;; 'hybrid') cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status ;; *) echo hmm ;; esac",
+    "restart-interval": 5,
+    "on-click": "swaymsg mode '$envyctl_options'",
+    "format": "{} "
+  },
+  "custom/powermode":{
+    "exec": "echo $(powerprofilesctl get) $(if [ -f '/sys/bus/pci/devices/0000:01:00.0/power/runtime_status' ]; then ",
+    "restart-interval": 5
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ]
+  }
+}

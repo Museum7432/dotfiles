@@ -1,0 +1,27 @@
+# for whatever reason swaymsg 'set $firefox 1,main ' doesn't work
+# with the character ',' in it
+# press mod+p to open the menu,
+# then press the first character of the profile's name
+# replace "${PROFILES[$i - 1]:0:1}" with $i if you want to use number instead
+
+bindsym $mod+shift+p exec cm='                                                                                        \
+    PROFILES=()                                                                                               &&\
+    MENU=""                                                                                                   &&\
+    raw=$(find ~/.mozilla/firefox/*.* -maxdepth 0 -type d)                                                    &&\
+    for line in $raw; do                                                                                        \
+        PROFILES+=(${line#*.*.});                                                                               \
+    done                                                                                                      &&\
+    for ((i=1; i <= ${#PROFILES[@]}; i++)); do                                                                  \
+        MENU+=". ${PROFILES[$i - 1]:0:1} ${PROFILES[$i-1]}";                                                                          \
+    done                                                                                                      &&\
+    swaymsg set \$firefox ${MENU:2}                                                                            &&\
+    for ((i=1; i <= ${#PROFILES[@]}; i++)); do                                                                  \
+        swaymsg mode \$firefox bindsym ${PROFILES[$i - 1]:0:1} exec swaymsg mode default \&\& "firefox \-P ${PROFILES[$i - 1]}";         \
+    done                                                                                                      &&\
+    swaymsg mode \$firefox bindsym t exec swaymsg mode default \&\& "/usr/bin/yes | /usr/bin/ivpn exclude /usr/bin/firefox -p temp"       &&\
+    swaymsg mode \$firefox bindsym Return exec swaymsg mode default \&\& "firefox \-p"                        &&\
+    swaymsg mode \$firefox bindsym Escape mode default                                                        &&\
+    swaymsg mode \$firefox                                                                                      \
+    ' && eval $cm , bindsym $mod+shift+p mode $firefox
+
+# bindsym $mod+p exec firefox

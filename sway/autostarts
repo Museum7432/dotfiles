@@ -2,6 +2,7 @@ exec swayidle -w \
          timeout 300 "brightnessctl -s && brightnessctl s 1" resume "brightnessctl -r"  \
          timeout 1700 "swaylock -f -c 000000 -i $wallpaper" \
          timeout 1800 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 2000 "systemctl suspend" \
          before-sleep 'playerctl pause' \
          before-sleep "swaylock -f -c 000000 -i $wallpaper"
 
@@ -26,12 +27,17 @@ exec /usr/bin/fcitx5
 exec /opt/appimages/filen-desktop.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
 
-exec /usr/bin/dunst
+# exec /usr/bin/dunst
+exec swaync
 
 # exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0 
 
-# exec "/usr/bin/yes | /usr/bin/ivpn exclude /usr/bin/syncthing"
-#exec /usr/bin/yes | /usr/bin/ivpn exclude /usr/bin/syncthing serve --no-browser --no-restart --logflags=0
 
+# syncthing autostart command in syncthingtray:
+# /usr/bin/bash -c "/usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3"
+# exec /usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3
+exec sleep 1 && /usr/bin/syncthingtray
+
+exec $HOME/.local/bin/on_power_source_change.sh
 
 # exec autotiling-rs

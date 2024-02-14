@@ -1,6 +1,6 @@
 clone https://github.com/andreasgrafen/cascade.git to ./chrome/base/cascade
 
-and remove or comment out these lines in  cascade/chrome/includes/cascade-config.css
+and remove or comment out these lines in  ./chrome/base/cascade/chrome/includes/cascade-config.css
 
 #identity-permission-box { display: none !important; }
 

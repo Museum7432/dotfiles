@@ -2,14 +2,16 @@
 set $tray_ic floating enable, move position cursor, move up 20px, sticky true
 
 for_window [app_id="nm-connection-editor"] $tray_ic
-for_window [app_id="pavucontrol"] floating enable, resize set 500 700,  $tray_ic
+for_window [app_id="pavucontrol"] resize set 500 700,  $tray_ic
 for_window [app_id="blueman-manager"]  $tray_ic
 
 for_window [app_id="org.fcitx.fcitx5-config-qt"]  $tray_ic
 
 
 for_window [app_id="filen-desktop"] $tray_ic
-for_window [app_id="Mullvad VPN"] $tray_ic
+for_window [app_id="Bitwarden"] $tray_ic
+for_window [app_id="IVPN"] $tray_ic
+for_window [app_id="syncthingtray"] resize set 200 400, $tray_ic
 
 input type:keyboard xkb_numlock enabled
 

@@ -18,6 +18,32 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
 user_pref("browser.download.useDownloadDir", false);
 
+// use ram cache
+// replace 1000 with your user id
+user_pref("browser.cache.disk.parent_directory", "/run/user/1000/firefox");
+
+
+user_pref("browser.quitShortcut.disabled", true);
+
+
+// Tracking protection
+user_pref("privacy.trackingprotection.enabled", true);
+
+user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.resistFingerprinting", true);
+// change user agent
+// user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0");
+// user_pref("general.platform.override", "Win32");
+
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("webgl.disabled", true);
+
+// disable WebAssembly
+user_pref("javascript.options.wasm", false);
+user_pref("javascript.options.wasm_baselinejit", false);
+user_pref("javascript.options.wasm_ionjit", false);
+
+
 // mullvad SOCKS5 proxy
 // user_pref("network.proxy.socks", "10.64.0.1");
 // user_pref("network.proxy.socks_port", 1080);

@@ -1,7 +1,7 @@
 /* import cascade https://github.com/andreasgrafen/cascade.git */
 
 @import './base/cascade/chrome/includes/cascade-config.css';
-@import './base/cascade/chrome/includes/cascade-colours.css';
+/* @import './base/cascade/chrome/includes/cascade-colours.css'; */
 
 
 @import './base/cascade/chrome/includes/cascade-layout.css';

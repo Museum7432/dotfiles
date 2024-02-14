@@ -1,5 +1,0 @@
-# /etc/udev/rules.d/60-changpowerprofilesctl.rules
-# Rule for when switching to battery
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{new_mode}="power-saver", RUN+="/usr/local/bin/changpowerprofilesctl.sh"
-# Rule for when switching to AC
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{new_mode}="performance", RUN+="/usr/local/bin/changpowerprofilesctl.sh"

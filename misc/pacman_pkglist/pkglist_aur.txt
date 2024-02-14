@@ -1,6 +1,10 @@
+code-features
+code-marketplace
 envycontrol
-galaxybudsclient-bin
+filen-desktop-appimage-git
 ivpn
 ivpn-ui
-pyenv-virtualenv
+linux-wifi-hotspot
+paru
+swaync
 syncthingtray

@@ -6,16 +6,8 @@
 
 export EDITOR=/usr/bin/vim
 
-# for pip
-export PIP_CACHE_DIR=$HOME/.cache_persistent/pip
-
-# for huggingface
-export HF_HOME=$HOME/.cache_persistent/huggingface/misc
-export HF_DATASETS_CACHE=$HOME/.cache_persistent/huggingface/datasets
-export TRANSFORMERS_CACHE=$HOME/.cache_persistent/huggingface/models
-
 if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
-	#export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+	export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
 	export LIBVA_DRIVER_NAME=radeonsi
 	export VDPAU_DRIVER=radeonsi
 
@@ -47,7 +39,7 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 
 	export WLR_NO_HARDWARE_CURSORS=1
 
-	export WLR_RENDERER=vulkan
+	# export WLR_RENDERER=vulkan
 	export XDG_CURRENT_DESKTOP=sway
     exec sway --unsupported-gpu
 fi

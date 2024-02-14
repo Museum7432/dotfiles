@@ -1,0 +1,1 @@
+rw rd.luks.options=discard amd_pstate=active nvidia_drm.modeset=1 plymouth.enable=0 disablehooks=plymouth

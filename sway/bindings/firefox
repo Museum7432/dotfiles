@@ -25,4 +25,4 @@
 #     ' && eval $cm , bindsym $mod+shift+p mode $firefox
 
 bindsym $mod+shift+p exec firefox
-bindsym $mod+shift+n exec firefox
+bindsym $mod+shift+o exec "echo y | /usr/bin/ivpn exclude /usr/bin/firefox -p temp"

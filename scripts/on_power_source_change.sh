@@ -6,12 +6,6 @@ if /usr/bin/pidof -o %PPID -x "on_power_source_change.sh"; then
     exit 1
 fi
 
-# wait for syncthing to start
-while ! /usr/bin/pidof /usr/bin/syncthing; do
-    /usr/bin/sleep 1
-done
-/usr/bin/sleep 5
-
 is_on_AC="$(< /sys/class/power_supply/ACAD/online)"
 
 while true; do
@@ -21,17 +15,12 @@ while true; do
         # use balanced mode
     	/usr/bin/powerprofilesctl set balanced
 
-        # resume syncthing on AC
-    	/usr/bin/syncthingctl resume --all-devs &
-
         # notify user
         /usr/bin/notify-send -e "plugged in"
     else
         # otherwise, use power-saver on battery
     	/usr/bin/powerprofilesctl set power-saver
 
-        # pause syncthing on battery
-    	/usr/bin/syncthingctl pause --all-devs &
 
     	/usr/bin/notify-send -e "on battery"
     fi

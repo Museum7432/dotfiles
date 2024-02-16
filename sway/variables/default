@@ -31,6 +31,6 @@ set $wallpaper_dir ~/Pictures/.wallpapers
 # if wallpaper_dir is empty then use the fallback_wallpaper
 set $_wallpaper_dir $(if [[ -d $wallpaper_dir && $(ls $wallpaper_dir) ]]; then echo $wallpaper_dir ;else echo $fallback_wallpaper; fi)
 
-set $wallpaper $(find $_wallpaper_dir -maxdepth 1 -type f | shuf -n 1)
+set $wallpaper $(find "$_wallpaper_dir" -maxdepth 1 -type f | shuf -n 1)
 
-set $screenshot_path ~/Pictures/cloud/screenshots/ps_$(date +"%Y%m%d%H%M%S").png
+set $screenshot_path ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png

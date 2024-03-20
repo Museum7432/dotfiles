@@ -18,6 +18,6 @@ mode "$envyctl_options" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+shift+i mode "$envyctl_options"
+bindsym $mod+shift+n mode "$envyctl_options"
 
 for_window [app_id="envycontrol"] floating enable, resize set 500 400

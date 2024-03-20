@@ -4,7 +4,7 @@
 #
 set $powermenu 1 Shut down, 2 Reboot, 3  Suspend, 4 Logout, 5 lock
 mode "$powermenu" {
-    bindsym 1 exec 'systemctl poweroff', mode "default"
+    bindsym 1 exec 'shutdown now', mode "default"
     bindsym 2 exec 'systemctl reboot', mode "default"
     bindsym 3 exec 'systemctl suspend', mode "default"
     bindsym 4 exec 'swaymsg exit', mode "default"

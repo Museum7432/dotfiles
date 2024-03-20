@@ -30,11 +30,17 @@
   background: transparent !important;
 } */
 
-/* only show Navigation Buttons when available */
-#back-button[disabled="true"],
-#forward-button[disabled="true"] {
+
+#back-button,
+#forward-button {
   display: none;
 }
+
+/* only show Navigation Buttons when available */
+/* #back-button[disabled="true"],
+#forward-button[disabled="true"] {
+  display: none;
+} */
 
 :root {
   /*  Width of the URL Bar for the Oneline layout
@@ -54,3 +60,14 @@
 }
 
 #navigator-toolbox:not(:-moz-lwtheme) { background: white !important; }
+
+
+.tabbrowser-tab:not([pinned]):not([selected="true"])
+{
+  max-width: 216px !important;
+  min-width: 124px;
+}
+
+.tabbrowser-tab:not([pinned])[selected="true"] {
+  min-width: 216px !important;
+}

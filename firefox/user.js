@@ -9,7 +9,7 @@ user_pref("browser.compactmode.show", true);
 
 user_pref("media.ffmpeg.vaapi.enabled", true);
 
-user_pref("browser.tabs.tabMinWidth", 192);
+// user_pref("browser.tabs.tabMinWidth", 192);
 // open previous session on start
 user_pref("browser.startup.page", 3);
 
@@ -33,7 +33,7 @@ user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.resistFingerprinting", true);
 // change user agent
 // user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0");
-// user_pref("general.platform.override", "Win32");
+user_pref("general.platform.override", "Win32");
 
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("webgl.disabled", true);

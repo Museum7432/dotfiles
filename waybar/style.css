@@ -8,7 +8,7 @@
 
 window#waybar {
     /* background: rgba(100, 100, 100, 0.5); */
-    background: rgba(43, 43, 43, 0.95);
+    background: rgba(22, 22, 22, 0.95);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
     color: white;
 }
@@ -47,21 +47,27 @@ tooltip label {
 
 
 #mode,
-#clock,
-#battery,
 #workspaces,
 #cpu,
 #memory,
 #backlight,
 #network,
-#pulseaudio,
 #tray,
 #mode,
-#idle_inhibitor,
 #scratchpad,
 #window,
 #custom-gpu_status {
     padding: 4px 5px;
+}
+
+#idle_inhibitor {
+    padding-left: 4px;
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+
+#clock {
+    padding-bottom: 10px;
 }
 
 #window {
@@ -74,6 +80,18 @@ window#waybar.empty #window {
 
 #mode {
     background: rgba(255, 255, 255, 0.05);
+}
+
+
+#battery {
+    padding: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+#battery.full {
+    color: #ffffff;
+    background-color: rgba(20, 193, 199, 0.662);
 }
 
 #battery.charging,
@@ -92,6 +110,12 @@ label:focus {
     background-color: #000000;
 }
 
+#pulseaudio {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #pulseaudio.muted {
     background-color: rgba(27, 145, 145, 0.666);
     
@@ -100,6 +124,8 @@ label:focus {
 
 #tray {
     background-color: rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 #tray>.passive {
@@ -112,8 +138,7 @@ label:focus {
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: rgba(255, 255, 255, 0.158);
 }
 
 #scratchpad {
@@ -126,5 +151,31 @@ label:focus {
 
 
 #custom-notification {
-    padding: 4px 0;
+    padding-bottom: 10px;
+    padding-left: 3px;
+}
+
+/* separators */
+
+#workspaces, 
+#custom-notification {
+    padding-top: 10px;
+    border-top: 1px solid rgb(100, 114, 125);
+}
+
+#taskbar {
+
+    background: rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+#taskbar button {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+}
+
+#taskbar.empty {
+    background: transparent;
 }

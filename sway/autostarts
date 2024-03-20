@@ -10,7 +10,7 @@ exec swayidle -w \
 # This will lock your screen after 1000 seconds of inactivity, then turn off
 # your displays after another 800 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-exec /usr/lib/baloo_file
+exec /usr/lib/kf6/baloo_file
 # exec wl-paste -t text --watch clipman store --no-persist
 
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -32,11 +32,12 @@ exec /opt/appimages/filen-desktop.AppImage --enable-features=UseOzonePlatform --
 
 # exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0 
 
+# start syncthing in splittunnel
+# exec /usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3
 
 # syncthing autostart command in syncthingtray:
 # /usr/bin/bash -c "/usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3"
-# exec /usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3
-exec sleep 1 && /usr/bin/syncthingtray
+# exec sleep 1 && /usr/bin/syncthingtray
 
 exec $HOME/.local/bin/on_power_source_change.sh
 

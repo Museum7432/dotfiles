@@ -4,23 +4,35 @@
   "width": 20,
   // Choose the order of the modules
   "modules-left": [
-    "custom/notification",
-    "clock",
-    "sway/window"
+    "idle_inhibitor",
+    "sway/window",
   ],
   "modules-center": [
-    "idle_inhibitor",
+    "clock",
     "sway/workspaces",
+    "wlr/taskbar",
+    "sway/scratchpad",
     "sway/mode",
-    "sway/scratchpad"
   ],
   "modules-right": [
     "custom/gpu_status",
-    // "privacy",
+    "privacy",
     "tray",
     "battery",
     "pulseaudio",
+    "custom/notification",
   ],
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 22,
+    // "icon-theme": "Breeze",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "kitty"
+    ]
+  },
   // Modules configuration
   "network": {
     "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
@@ -51,7 +63,7 @@
     "spacing": 7
   },
   "clock": {
-    "format": "{:%H\n%M}",
+    "format": "{:%I\n%M\n%p}",
     // "timezone": "America/New_York",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
@@ -96,7 +108,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
+    "format": "{capacity}",
     "format-icons": [
       "",
       "",
@@ -124,7 +136,7 @@
   },
   "sway/window": {
     "format": "{title}",
-    "max-length": 50,
+    "max-length": 30,
     "rewrite": {
       "(.*) — Mozilla Firefox": "$1"
     },
@@ -138,13 +150,13 @@
       ""
     ],
     "tooltip": true,
-    "tooltip-format": "{app}: {title}"
+    "tooltip-format": "{app}: {title}",
+    "rotate":270
   },
   "custom/gpu_status": {
     // check nvidia dgpu power status
     "exec": "if [ $(cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status | grep active) ]; then echo 󱐋; else echo \"\"; fi",
     "restart-interval": 2,
-    // "on-click": "swaymsg mode '$envyctl_options'",
     "format": "{}"
   },
   "privacy": {

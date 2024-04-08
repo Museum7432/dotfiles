@@ -1,6 +1,0 @@
-
-
-output * bg $wallpaper fill
-
-
-bindsym $mod+o output * bg $wallpaper fill

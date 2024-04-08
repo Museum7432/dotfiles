@@ -10,7 +10,7 @@
   "modules-center": [
     "clock",
     "sway/workspaces",
-    "wlr/taskbar",
+    // "wlr/taskbar",
     "sway/scratchpad",
     "sway/mode",
   ],
@@ -161,7 +161,7 @@
   },
   "privacy": {
     "icon-spacing": 4,
-    "icon-size": 18,
+    "icon-size": 10,
     "transition-duration": 250,
     "modules": [
       {
@@ -169,17 +169,18 @@
         "tooltip": true,
         "tooltip-icon-size": 24
       },
-      {
-        "type": "audio-out",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
+      // {
+      //   "type": "audio-out",
+      //   "tooltip": true,
+      //   "tooltip-icon-size": 24
+      // },
       {
         "type": "audio-in",
         "tooltip": true,
         "tooltip-icon-size": 24
       }
-    ]
+    ],
+    "rotate":270
   },
   "custom/notification": {
     "tooltip": false,
@@ -200,5 +201,5 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  }
+  },
 }

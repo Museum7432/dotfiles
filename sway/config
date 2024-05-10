@@ -13,14 +13,14 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 
-set $term kitty
+set $term alacritty
 
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu wofi --show=drun -i
-set $menu_cmd j4-dmenu-desktop --dmenu='bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20' --term='kitty' --no-generic --usage-log=$HOME/.cache/menu_usage_log | xargs swaymsg exec --
+set $menu_cmd j4-dmenu-desktop --dmenu='bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log | xargs swaymsg exec --
 
 set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
 

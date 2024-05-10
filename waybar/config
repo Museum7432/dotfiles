@@ -24,7 +24,7 @@
   ],
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 22,
+    "icon-size": 18,
     // "icon-theme": "Breeze",
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -54,8 +54,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-      "activated": "",
-      "deactivated": ""
+      "activated": "󰒳",
+      "deactivated": ""
     },
   },
   "tray": {

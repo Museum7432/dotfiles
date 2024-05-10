@@ -1,4 +1,3 @@
-#
 # ~/.bash_profile
 #
 
@@ -7,9 +6,10 @@
 export EDITOR=/usr/bin/vim
 
 if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
-	export __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
-	export LIBVA_DRIVER_NAME=radeonsi
-	export VDPAU_DRIVER=radeonsi
+	export __EGL_VENDOR_LIBRARY_FILENAMES="/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+	export __GLX_VENDOR_LIBRARY_NAME="mesa"
+	#export LIBVA_DRIVER_NAME=radeonsi
+	#export VDPAU_DRIVER=radeonsi
 
 	export XDG_SESSION_TYPE=wayland
 	export XDG_SESSION_DESKTOP=sway
@@ -22,6 +22,8 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 	export QT_QPA_PLATFORM="wayland;xcb"
 	export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 	#export QT_WAYLAND_FORCE_DPI=physical
+	
+	export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 	#Java XWayland blank screens fix
 	export _JAVA_AWT_WM_NONREPARENTING=1
@@ -30,8 +32,12 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 	export GNOME_KEYRING_CONTROL=$XDG_RUNTIME_DIR/keyring
 	
 	export GTK_IM_MODULE=fcitx
-	export QT_IM_MODULE=fcitx
-	export XMODIFIERS=@im=fcitx	
+	QT_IM_MODULES="wayland;fcitx;ibus"
+	export XMODIFIERS=@im=fcitx
+	#export SDL_IM_MODULE=fcitx
+	export GLFW_IM_MODULE=fcitx
+	export INPUT_METHOD=fcitx
+	export IMSETTINGS_MODULE=fcitx
 
 	# theme
 	#export GTK_THEME=Breeze
@@ -39,7 +45,7 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 
 	export WLR_NO_HARDWARE_CURSORS=1
 
-	# export WLR_RENDERER=vulkan
+	#export WLR_RENDERER=vulkan
 	export XDG_CURRENT_DESKTOP=sway
-    exec sway --unsupported-gpu
+    	exec sway --unsupported-gpu
 fi

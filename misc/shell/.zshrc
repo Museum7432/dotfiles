@@ -14,9 +14,15 @@ autoload -Uz promptinit
 promptinit
 prompt suse
 
-alias ls='/usr/bin/ls --color=auto'
+alias ls='/usr/bin/ls -hF --color=auto'
 alias grep='/usr/bin/grep --color=auto'
-alias pyenv_init='eval "$(pyenv init --path)"'
+alias diff='/usr/bin/colordiff'
+
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'
+
+alias workon='pyenv activate'
 
 setopt EXTENDED_HISTORY
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -32,3 +38,10 @@ bindkey "^[[1;5C" forward-word
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#export WORKON_HOME=~/.virtualenvs
+#source /usr/bin/virtualenvwrapper_lazy.sh
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

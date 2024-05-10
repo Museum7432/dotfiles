@@ -6,7 +6,7 @@
 
 set $tray_ic floating enable, move position cursor, move left 30px, sticky true
 
-set $floating_pos resize set 1300 700, move right 200px, move down 70px
+set $floating_pos move right 200px, move down 70px, resize set 900 500
 
 for_window {
     [window_role="pop-up"] floating enable
@@ -37,6 +37,8 @@ for_window {
     [title="nvtop"] move to scratchpad, scratchpad show, $floating_pos
     [title="Htop"] move to scratchpad, scratchpad show, $floating_pos
 
+    [app_id="qalculate-qt"] floating enable, sticky true, resize set 500 700, move right 400px, move down 100px
+    [app_id="org.kde.kalgebra"] floating enable, sticky true, $floating_pos
 
     # tray icons
     [app_id="syncthingtray"] resize set 200 400, $tray_ic

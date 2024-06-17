@@ -15,7 +15,7 @@
     "sway/mode",
   ],
   "modules-right": [
-    "custom/gpu_status",
+    // "custom/gpu_status"`,
     "privacy",
     "tray",
     "battery",
@@ -151,7 +151,7 @@
     ],
     "tooltip": true,
     "tooltip-format": "{app}: {title}",
-    "rotate":270
+    "rotate": 270
   },
   "custom/gpu_status": {
     // check nvidia dgpu power status
@@ -180,7 +180,7 @@
         "tooltip-icon-size": 24
       }
     ],
-    "rotate":270
+    "rotate": 270
   },
   "custom/notification": {
     "tooltip": false,

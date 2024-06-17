@@ -9,7 +9,7 @@ user_pref("browser.compactmode.show", true);
 
 user_pref("media.ffmpeg.vaapi.enabled", true);
 
-// user_pref("browser.tabs.tabMinWidth", 192);
+user_pref("browser.tabs.tabMinWidth", 128);
 // open previous session on start
 user_pref("browser.startup.page", 3);
 

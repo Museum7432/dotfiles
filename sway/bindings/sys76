@@ -1,0 +1,21 @@
+# change kitty to your favorite terminal
+
+set $sys76_options i integrated, h hybrid, c compute
+set $reboot_prompt read -p 'reboot now? [Y/n] ' choice; [[ \$choice == '' || \$choice == [Yy]* ]] && systemctl reboot
+
+set $sys76_graphic /usr/bin/system76-power graphics
+
+set $popup_terminal /usr/bin/alacritty --class="sys76" --title="sys76" -e /usr/bin/bash \-c
+
+mode "$sys76_options" {
+    bindsym i exec $popup_terminal "( $sys76_graphic integrated ) && ( $reboot_prompt )", mode "default"
+    bindsym h exec $popup_terminal "( $sys76_graphic hybrid  ) && ( $reboot_prompt )", mode "default"
+    bindsym c exec $popup_terminal "( $sys76_graphic compute  ) && ( $reboot_prompt )", mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+shift+n mode "$sys76_options"
+
+for_window [app_id="sys76"] floating enable, resize set 500 400

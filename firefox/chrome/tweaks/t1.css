@@ -17,7 +17,7 @@
 
 /* #identity-permission-box { display: -moz-box !important; } */
 
-/* this may always show the extensions button*/
+/* this always show the extensions button*/
 #unified-extensions-button {
   display: -moz-box !important;
 }

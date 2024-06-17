@@ -10,9 +10,11 @@ zstyle :compinstall filename '/home/arch/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-autoload -Uz promptinit
-promptinit
-prompt suse
+#autoload -Uz promptinit
+#promptinit
+#prompt suse
+
+PROMPT='%F{blue}%~ %(?.%F{green}.%F{red})❯%b%f '
 
 alias ls='/usr/bin/ls -hF --color=auto'
 alias grep='/usr/bin/grep --color=auto'

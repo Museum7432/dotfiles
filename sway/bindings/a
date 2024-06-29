@@ -15,5 +15,5 @@ include ./powermenu
 
 include ./display
 
-# include ./envycontrol
-include ./sys76
+include ./envycontrol
+#include ./sys76

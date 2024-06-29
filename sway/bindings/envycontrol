@@ -1,11 +1,11 @@
 # change kitty to your favorite terminal
 
-set $envyctl_options i integrated, h hybrid, n nvidia
+set $envyctl_options i integrated, h hybrid
 set $reboot_prompt read -p 'reboot now? [Y/n] ' choice; [[ \$choice == '' || \$choice == [Yy]* ]] && systemctl reboot
 
 set $envyctl_integrated /usr/bin/pkexec /usr/bin/envycontrol -s integrated
 set $envyctl_hybrid /usr/bin/pkexec /usr/bin/envycontrol -s hybrid --rtd3 2
-set $envyctl_nvidia /usr/bin/pkexec /usr/bin/envycontrol -s nvidia
+# set $envyctl_nvidia /usr/bin/pkexec /usr/bin/envycontrol -s nvidia
 
 # set $popup_terminal /usr/bin/foot --app-id="envycontrol" /usr/bin/bash \-c
 set $popup_terminal /usr/bin/alacritty --class="envycontrol" --title="envycontrol" -e /usr/bin/bash \-c
@@ -13,7 +13,7 @@ set $popup_terminal /usr/bin/alacritty --class="envycontrol" --title="envycontro
 mode "$envyctl_options" {
     bindsym i exec $popup_terminal "( $envyctl_integrated ) && ( $reboot_prompt )", mode "default"
     bindsym h exec $popup_terminal "( $envyctl_hybrid ) && ( $reboot_prompt )", mode "default"
-    bindsym n exec $popup_terminal "( $envyctl_nvidia ) && ( $reboot_prompt )", mode "default"
+    # bindsym n exec $popup_terminal "( $envyctl_nvidia ) && ( $reboot_prompt )", mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"

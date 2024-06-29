@@ -25,6 +25,8 @@ for_window {
     [app_id="org.kde.ark"] floating enable
     [title="Firefox - Choose User Profile"] floating enable
 
+    #[title="Steam"] floating enable
+    [instance="steamwebhelper"] floating enable
     # firefox
     [title="Firefox — Sharing Indicator"] floating enable
     [title="Picture-in-Picture"] floating enable, sticky true

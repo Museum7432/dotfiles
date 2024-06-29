@@ -15,7 +15,7 @@
     "sway/mode",
   ],
   "modules-right": [
-    // "custom/gpu_status"`,
+    "custom/gpu_status",
     "privacy",
     "tray",
     "battery",
@@ -34,13 +34,13 @@
     ]
   },
   // Modules configuration
-  "network": {
-    "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
-    "tooltip-format-disconnected": "",
-    "interval": 3
-  },
+  // "network": {
+  //   "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+  //   "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+  //   "tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+  //   "tooltip-format-disconnected": "",
+  //   "interval": 3
+  // },
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -87,21 +87,21 @@
       "on-scroll-down": "shift_down"
     }
   },
-  "backlight": {
-    "format": "{icon} {percent}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip-format": "{percent} %"
-  },
+  // "backlight": {
+  //   "format": "{icon} {percent}",
+  //   "format-icons": [
+  //     "",
+  //     "",
+  //     "",
+  //     "",
+  //     "",
+  //     "",
+  //     "",
+  //     "",
+  //     ""
+  //   ],
+  //   "tooltip-format": "{percent} %"
+  // },
   "battery": {
     "states": {
       "good": 95,

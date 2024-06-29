@@ -1,10 +1,7 @@
-code-features
-code-marketplace
 envycontrol
-filen-desktop-appimage-git
-ivpn
 ivpn-ui
-linux-wifi-hotspot
-paru
-swaync
-syncthingtray
+kvantum-theme-whitesur-git
+pyenv-virtualenv
+vscodium-bin
+whitesur-gtk-theme
+whitesur-icon-theme

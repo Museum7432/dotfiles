@@ -42,11 +42,11 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 
 	# theme
 	#export GTK_THEME=Breeze
-	export QT_QPA_PLATFORMTHEME=qt5ct
+	export QT_QPA_PLATFORMTHEME=qt6ct
 
 	export WLR_NO_HARDWARE_CURSORS=1
 
 	#export WLR_RENDERER=vulkan
 	export XDG_CURRENT_DESKTOP=sway
-    	exec sway --unsupported-gpu
+    	exec sway --unsupported-gpu > ~/.sway.log 2>&1
 fi

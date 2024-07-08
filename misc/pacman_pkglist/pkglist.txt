@@ -8,7 +8,7 @@ bemenu
 bemenu-wayland
 blueman
 bluez-utils
-breeze5
+breeze
 brightnessctl
 cmake
 colordiff
@@ -41,15 +41,11 @@ kalgebra
 kdegraphics-thumbnailers
 kdesdk-thumbnailers
 kdiskmark
-kfilemetadata5
+kfilemetadata
 kompare
 konsole
 kvantum
 languagetool
-lib32-nvidia-utils
-lib32-opencl-nvidia
-lib32-vulkan-mesa-layers
-lib32-vulkan-radeon
 libappindicator-gtk2
 libcpuid
 libheif

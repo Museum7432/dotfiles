@@ -109,6 +109,7 @@
       "critical": 15
     },
     "format": "{capacity}",
+    // "format": "{icon}",
     "format-icons": [
       "",
       "",
@@ -119,9 +120,9 @@
     // "rotate":270
   },
   "pulseaudio": {
-    "format": "{icon} {volume:2}",
-    "format-bluetooth": "{icon} {volume} ",
-    "format-muted": "MUTE",
+    "format": "vol {volume:2}",
+    "format-bluetooth": "blu {volume:2}",
+    "format-muted": "muted",
     "format-icons": {
       "headphones": "",
       "default": [

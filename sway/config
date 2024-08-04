@@ -29,14 +29,14 @@ set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
 
 set $fallback_wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
-set $wallpaper_dir ~/Pictures/.wallpapers
+set $wallpaper_dir ~/.wallpapers/
 
 # if wallpaper_dir is empty then use the fallback_wallpaper
 set $_wallpaper_dir $(if [[ -d $wallpaper_dir && $(ls $wallpaper_dir) ]]; then echo $wallpaper_dir ;else echo $fallback_wallpaper; fi)
 
 set $wallpaper $(find "$_wallpaper_dir" -maxdepth 1 -type f | shuf -n 1)
 
-set $screenshot_path ~/Pictures/screenshots/ps_$(date +"%Y%m%d%H%M%S").png
+set $screenshot_path ~/.screenshots/ps_$(date +"%Y%m%d%H%M%S").png
 
 
 input type:keyboard xkb_numlock enabled

@@ -1,15 +1,8 @@
 exec swayidle -w \
-         timeout 300 "brightnessctl -s && brightnessctl s 1" resume "brightnessctl -r"  \
-         timeout 1700 "swaylock -f -c 000000 -i $wallpaper" \
-         timeout 2000 "systemctl suspend" \
-         before-sleep 'playerctl pause' \
-         before-sleep "swaylock -f -c 000000 -i $wallpaper"
-        #  timeout 1800 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        timeout 300 "brightnessctl -s && brightnessctl s 1" resume "brightnessctl -r"  \
+        timeout 1800 "systemctl suspend" \
+        before-sleep 'gtklock -d && playerctl pause'
 
-# 
-# This will lock your screen after 1000 seconds of inactivity, then turn off
-# your displays after another 800 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
 exec /usr/lib/kf6/baloo_file
 # exec wl-paste -t text --watch clipman store --no-persist
 
@@ -19,7 +12,7 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/bin/nm-applet --indicator
 #exec xdg-user-dirs-update
 
-exec env XDG_MENU_PREFIX=plasma- kbuildsycoca6
+# exec env XDG_MENU_PREFIX=plasma- kbuildsycoca6
 
 exec /opt/ivpn/ui/bin/ivpn-ui --enable-features=UseOzonePlatform --ozone-platform=wayland --hidden
 exec /usr/bin/blueman-applet

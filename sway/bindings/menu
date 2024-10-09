@@ -1,0 +1,25 @@
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+#set $menu wofi --show=drun -i
+
+set $menu_cmd_prefix j4-dmenu-desktop --dmenu='bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log
+
+
+
+
+
+set $menu_cmd $menu_cmd_prefix -I
+set $menu_cmd_ivpn_tunnel $menu_cmd_prefix --wrapper="swaymsg exec yes | ivpn exclude" --skip-i3-exec-check
+
+
+# set $menu_cmd_ivpn_tunnel $menu_cmd_prefix | xargs swaymsg exec ivpn exclude --
+
+set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
+
+# Start your launcher
+# bindsym $mod+d exec $menu
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+d exec $menu_cmd_ivpn_tunnel

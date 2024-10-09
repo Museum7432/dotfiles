@@ -10,7 +10,7 @@
   "modules-center": [
     "clock",
     "sway/workspaces",
-    // "wlr/taskbar",
+    "wlr/taskbar",
     "sway/scratchpad",
     "sway/mode",
   ],
@@ -24,7 +24,7 @@
   ],
   "wlr/taskbar": {
     "format": "{icon}",
-    "icon-size": 18,
+    "icon-size": 16,
     // "icon-theme": "Breeze",
     "tooltip-format": "{title}",
     "on-click": "activate",
@@ -60,11 +60,13 @@
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 7
+    "spacing": 7,
+    "show-passive-items": true,
+    "reverse-direction": true
   },
   "clock": {
     "format": "{:%I\n%M\n%p}",
-    // "timezone": "America/New_York",
+    // "timezone": "Etc/UCT",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",

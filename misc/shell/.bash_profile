@@ -17,6 +17,7 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 	#export GTK_USE_PORTAL=1
 	export GDK_DEBUG=portals
 	# firefox
+	export BROWSER=firefox
 	export MOZ_ENABLE_WAYLAND=1
 
 	# qt wayland
@@ -33,12 +34,17 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 	export GNOME_KEYRING_CONTROL=$XDG_RUNTIME_DIR/keyring
 	
 	export GTK_IM_MODULE=fcitx
-	QT_IM_MODULES="wayland;fcitx;ibus"
+	export QT_IM_MODULES="wayland;fcitx;ibus"
 	export XMODIFIERS=@im=fcitx
 	#export SDL_IM_MODULE=fcitx
 	export GLFW_IM_MODULE=fcitx
 	export INPUT_METHOD=fcitx
 	export IMSETTINGS_MODULE=fcitx
+	
+	export XDG_MENU_PREFIX=plasma-
+	/usr/bin/kbuildsycoca6
+
+	export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 	# theme
 	#export GTK_THEME=Breeze
@@ -48,5 +54,6 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 
 	#export WLR_RENDERER=vulkan
 	export XDG_CURRENT_DESKTOP=sway
+
     	exec sway --unsupported-gpu > ~/.sway.log 2>&1
 fi

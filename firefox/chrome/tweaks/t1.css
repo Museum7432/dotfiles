@@ -30,6 +30,7 @@
   background: transparent !important;
 } */
 
+#toolbar-menubar{ position: relative; display: flex; top: var(--uc-titlebar-padding,0px); height: 24px; width: 100%; overflow: hidden; }
 
 #back-button,
 #forward-button {
@@ -59,7 +60,7 @@
   width: 0 !important;
 }
 
-#navigator-toolbox:not(:-moz-lwtheme) { background: white !important; }
+/* #navigator-toolbox:not(:-moz-lwtheme) { background: white !important; } */
 
 
 .tabbrowser-tab:not([pinned]):not([selected="true"])

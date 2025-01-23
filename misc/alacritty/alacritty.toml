@@ -17,7 +17,7 @@ style = "Italic"
 family = "RobotoMono Nerd Font Mono"
 style = "Regular"
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l"]
 
@@ -61,3 +61,5 @@ blue = '#6f8fdb'
 magenta = '#e987e9'
 cyan = '#4ac9e2'
 white = '#FFFFFF'
+
+[terminal]

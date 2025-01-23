@@ -34,11 +34,18 @@ for_window {
     [class="Caprine"] move to scratchpad, scratchpad show, $floating_pos
     [app_id="org.strawberrymusicplayer.strawberry"] move to scratchpad, scratchpad show, $floating_pos
     [app_id="Cider"] move to scratchpad, scratchpad show, $floating_pos, stiky true
-    [title="Spotify Premium"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+
+    # [title="Spotify Premium"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+    [class="Spotify"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+    
+    [app_id="io.missioncenter.MissionCenter"] move to scratchpad, scratchpad show, $floating_pos
+    [app_id="@filen/desktop"] move to scratchpad, scratchpad show, $floating_pos
+
     [app_id="gedit"] move to scratchpad, scratchpad show, $floating_pos
 
-    [app_id="nvtop"] move to scratchpad, scratchpad show, $floating_pos
-    [app_id="htop"] move to scratchpad, scratchpad show, $floating_pos
+    [title="nvtop"] floating enable
+    [title="Htop"] floating enable
+
     [app_id="org.gnome.SystemMonitor"] move to scratchpad, scratchpad show, $floating_pos
 
     [app_id="qalculate-qt"] floating enable, sticky true, resize set 500 700, move right 400px, move down 100px

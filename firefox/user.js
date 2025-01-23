@@ -44,6 +44,11 @@ user_pref("javascript.options.wasm_baselinejit", false);
 user_pref("javascript.options.wasm_ionjit", false);
 
 
+// change how zoom with ctrl+scroll wheel works
+user_pref("mousewheel.with_control.action", 5);
+user_pref("mousewheel.with_alt.action", 3);
+
+
 // mullvad SOCKS5 proxy
 // user_pref("network.proxy.socks", "10.64.0.1");
 // user_pref("network.proxy.socks_port", 1080);

@@ -1,20 +1,15 @@
 /* import cascade https://github.com/andreasgrafen/cascade.git */
-
+/* 
 @import './base/cascade/chrome/includes/cascade-config.css';
-/* @import './base/cascade/chrome/includes/cascade-colours.css'; */
-
-
 @import './base/cascade/chrome/includes/cascade-layout.css';
 @import './base/cascade/chrome/includes/cascade-responsive.css';
-/* @import './base/cascade/chrome/includes/cascade-responsive-windows-fix.css'; */
 @import './base/cascade/chrome/includes/cascade-floating-panel.css';
 
 @import './base/cascade/chrome/includes/cascade-nav-bar.css';
 @import './base/cascade/chrome/includes/cascade-tabs.css';
 
 
-/* tweaks */
 
-@import './tweaks/t1.css';
+@import './tweaks/t1.css'; */
 
 /* @import './tweaks/t2.css'; */

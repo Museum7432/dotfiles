@@ -22,4 +22,6 @@ set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
 # Start your launcher
 # bindsym $mod+d exec $menu
 bindsym $mod+d exec $menu
-bindsym $mod+Shift+d exec $menu_cmd_ivpn_tunnel
+
+# for ivpn
+# bindsym $mod+Shift+d exec $menu_cmd_ivpn_tunnel

@@ -5,22 +5,23 @@
   // Choose the order of the modules
   "modules-left": [
     "idle_inhibitor",
-    "sway/window",
+    "sway/window"
   ],
   "modules-center": [
     "clock",
     "sway/workspaces",
-    "wlr/taskbar",
+    // "wlr/taskbar",
     "sway/scratchpad",
-    "sway/mode",
+    "sway/mode"
   ],
   "modules-right": [
     "custom/gpu_status",
     "privacy",
+    "custom/warp",
     "tray",
     "battery",
     "pulseaudio",
-    "custom/notification",
+    "custom/notification"
   ],
   "wlr/taskbar": {
     "format": "{icon}",
@@ -42,13 +43,13 @@
   //   "interval": 3
   // },
   "sway/workspaces": {
-    "disable-scroll": true,
+    // "disable-scroll": true,
     "all-outputs": true,
     "format": "{name}",
     "rotate": 270
   },
   "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>",
+    "format": "{}",
     "rotate": 270
   },
   "idle_inhibitor": {
@@ -56,11 +57,11 @@
     "format-icons": {
       "activated": "󰒳",
       "deactivated": ""
-    },
+    }
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 7,
+    "spacing": 8,
     "show-passive-items": true,
     "reverse-direction": true
   },
@@ -89,42 +90,18 @@
       "on-scroll-down": "shift_down"
     }
   },
-  // "backlight": {
-  //   "format": "{icon} {percent}",
-  //   "format-icons": [
-  //     "",
-  //     "",
-  //     "",
-  //     "",
-  //     "",
-  //     "",
-  //     "",
-  //     "",
-  //     ""
-  //   ],
-  //   "tooltip-format": "{percent} %"
-  // },
   "battery": {
     "states": {
       "good": 95,
       "warning": 30,
       "critical": 15
     },
-    "format": "{capacity}",
-    // "format": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    // "rotate":270
+    "format": "{capacity}"
   },
   "pulseaudio": {
     "format": "vol {volume:2}",
     "format-bluetooth": "blu {volume:2}",
-    "format-muted": "muted",
+    "format-muted": "Muted",
     "format-icons": {
       "headphones": "",
       "default": [
@@ -172,11 +149,6 @@
         "tooltip": true,
         "tooltip-icon-size": 24
       },
-      // {
-      //   "type": "audio-out",
-      //   "tooltip": true,
-      //   "tooltip-icon-size": 24
-      // },
       {
         "type": "audio-in",
         "tooltip": true,
@@ -205,4 +177,9 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+  "custom/warp": {
+    "exec": "if warp-cli status | grep Connected; then echo ; else echo ; fi",
+    "on-click": "if warp-cli status | grep Connected; then warp-cli disconnect; else warp-cli connect; fi",
+    "restart-interval": 1
+  }
 }

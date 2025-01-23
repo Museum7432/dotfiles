@@ -13,14 +13,19 @@ exec /usr/bin/nm-applet --indicator
 #exec xdg-user-dirs-update
 
 # exec env XDG_MENU_PREFIX=plasma- kbuildsycoca6
+exec kbuildsycoca6
+# exec /opt/ivpn/ui/bin/ivpn-ui --enable-features=UseOzonePlatform --ozone-platform=wayland --hidden
 
-exec /opt/ivpn/ui/bin/ivpn-ui --enable-features=UseOzonePlatform --ozone-platform=wayland --hidden
 exec /usr/bin/blueman-applet
 
 exec /usr/bin/fcitx5
 
-exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+# exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
+
+exec /usr/bin/gammastep-indicator
+
+exec /usr/bin/filen-desktop
 
 # exec /usr/bin/dunst
 exec swaync
@@ -37,3 +42,5 @@ exec swaync
 # exec $HOME/.local/bin/on_power_source_change.sh
 
 # exec autotiling-rs
+
+# exec "sleep 1 && /opt/ivpn/ui/bin/ivpn-ui --hidden"

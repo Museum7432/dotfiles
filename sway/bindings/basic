@@ -21,3 +21,6 @@ bindsym $mod+Shift+c reload
 
 # Toggle control center
 bindsym $mod+n exec swaync-client -t -sw
+
+
+bindsym Ctrl+Escape exec missioncenter

@@ -17,7 +17,7 @@
   "modules-right": [
     "custom/gpu_status",
     "privacy",
-    "custom/warp",
+    // "custom/warp",
     "tray",
     "battery",
     "pulseaudio",

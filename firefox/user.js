@@ -3,13 +3,13 @@ user_pref("accessibility.force_disabled", 1);
 // disable poket
 user_pref("extensions.pocket.enabled", false);
 
-user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+// user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 // enable compact mode
 user_pref("browser.compactmode.show", true);
 
 user_pref("media.ffmpeg.vaapi.enabled", true);
 
-user_pref("browser.tabs.tabMinWidth", 128);
+// user_pref("browser.tabs.tabMinWidth", 128);
 // open previous session on start
 user_pref("browser.startup.page", 3);
 
@@ -27,14 +27,26 @@ user_pref("browser.quitShortcut.disabled", true);
 
 
 // Tracking protection
-user_pref("privacy.trackingprotection.enabled", true);
+// copied from mullvad browser
+user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts", true);
+user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
+user_pref("privacy.resistFingerprinting.exemptedDomains", "*.example.invalid");
+user_pref("privacy.resistFingerprinting.jsmloglevel", "Warn");
+user_pref("privacy.resistFingerprinting.letterboxing", false);
+
+user_pref("privacy.resistFingerprinting.randomDataOnCanvasExtract", true);
+user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", true);
+user_pref("privacy.resistFingerprinting.reduceTimerPrecision.microseconds", 1000);
+// user_pref("privacy.resistFingerprinting.target_video_res", 480);
+user_pref("privacy.resistFingerprinting.testGranularityMask", 0);
+user_pref("services.sync.prefs.sync.privacy.resistFingerprinting.reduceTimerPrecision.jitter", true);
+user_pref("services.sync.prefs.sync.privacy.resistFingerprinting.reduceTimerPrecision.microseconds", true);
+user_pref("privacy.resistFingerprinting.randomDataOnCanvasExtract", true);
 
 user_pref("privacy.firstparty.isolate", true);
-user_pref("privacy.resistFingerprinting", true);
-// change user agent
-// user_pref("general.useragent.override", "Mozilla/5.0 (Windows NT 10.0; rv:122.0) Gecko/20100101 Firefox/122.0");
-// user_pref("general.platform.override", "Win32");
 
+// user_pref("privacy.resistFingerprinting", true);
 user_pref("toolkit.telemetry.enabled", false);
 user_pref("webgl.disabled", true);
 
@@ -48,15 +60,7 @@ user_pref("javascript.options.wasm_ionjit", false);
 user_pref("mousewheel.with_control.action", 5);
 user_pref("mousewheel.with_alt.action", 3);
 
-
-// mullvad SOCKS5 proxy
-// user_pref("network.proxy.socks", "10.64.0.1");
-// user_pref("network.proxy.socks_port", 1080);
-// user_pref("network.proxy.socks_remote_dns", true);
-// user_pref("network.proxy.socks_version", 5);
-// user_pref("network.proxy.type", 1);
-
-// user kde file picker instead of gtk (require xdg-desktop-portal-kde)
+// use kde file picker instead of gtk (require xdg-desktop-portal-kde)
 user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
 user_pref("widget.use-xdg-desktop-portal.mime-handler", 1);
 

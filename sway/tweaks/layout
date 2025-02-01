@@ -60,4 +60,5 @@ for_window {
     [app_id="blueman-manager"]  $tray_ic
     [app_id="pavucontrol"] resize set 500 1000,  $tray_ic
     [app_id="nm-connection-editor"] $tray_ic
+    [app_id="Mullvad VPN"] $tray_ic
 }

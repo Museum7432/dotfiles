@@ -21,6 +21,9 @@ exec /usr/bin/blueman-applet
 exec /usr/bin/fcitx5
 
 # exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
+
+exec "sleep 1 && /opt/Mullvad\ VPN/mullvad-vpn --hidden"
+
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
 
 exec /usr/bin/gammastep-indicator

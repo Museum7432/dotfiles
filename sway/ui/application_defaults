@@ -1,0 +1,108 @@
+
+# set floating (nontiling)
+for_window [class="Yad" instance="yad"] floating enable
+for_window [app_id="yad"] floating enable
+for_window [app_id="blueman-manager"] floating enable,  resize set width 40 ppt height 30 ppt
+for_window [app_id="calamares"] floating enable
+for_window [app_id="pavucontrol" ] floating enable, resize set width 50 ppt height 50 ppt
+for_window [app_id="garuda-rani"] floating enable, resize set width 70 ppt height 70 ppt
+for_window [app_id="garuda-assistant"] floating enable
+for_window [app_id="garuda-gamer"] floating enable
+for_window [app_id="garuda-settings-manager"] floating enable
+for_window [app_id="garuda-network-assistant"] floating enable
+for_window [app_id="garuda-boot-options"] floating enable
+for_window [app_id="setup-assistant"] floating enable, resize set width 70 ppt height 70 ppt
+for_window [title="launch-terminal"] floating enable, resize set width 60 ppt height 80 ppt
+for_window [app_id="galculator"] floating enable, move position cursor
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_role="About"] floating enable
+for_window [title="File Operation Progress"] floating enable, border pixel 1, sticky enable, resize set width 40 ppt height 30 ppt
+for_window [app_id="floating_shell_portrait"] floating enable, border pixel 1, sticky enable, resize set width 30 ppt height 40 ppt
+for_window [title="Picture in picture"] floating enable, sticky enable
+for_window [app_id="xsensors"] floating enable
+for_window [title="Save File"] floating enable
+for_window [title="waybar_btm"] floating enable, resize set width 50 ppt height 70 ppt
+for_window [title="waybar_nmtui"] floating enable
+for_window [title="waybar_garuda-update"] floating enable, resize set width 80 ppt height 80 ppt
+for_window [title="waybar_pacseek"] floating enable, resize set width 80 ppt height 80 ppt
+for_window [title="waybar_dua"] floating enable, resize set width 60 ppt height 80 ppt
+for_window [title="waybar_battop"] floating enable, resize set width 60 ppt height 60 ppt
+for_window [title="waybar_bluetui"] floating enable, resize set width 50 ppt height 70 ppt
+for_window [title="waybar_s-tui"] floating enable, resize set width 50 ppt height 70 ppt
+for_window [title="waybar_calcurse"] floating enable, resize set width 60 ppt height 60 ppt
+for_window [title="waybar_calcurse-caldav"] floating enable, move position cursor
+for_window [title="sway_config"] floating enable, resize set width 80 ppt height 80 ppt
+
+# Inhibit idle
+for_window [app_id="librewolf"] inhibit_idle fullscreen
+for_window [app_id="Chromium"] inhibit_idle fullscreen
+
+
+
+set $tray_ic floating enable, move position cursor, move left 30px, sticky true
+
+set $floating_pos move right 200px, move down 70px, resize set 1200 700
+
+for_window {
+    [window_role="pop-up"] floating enable
+    [window_role="bubble"] floating enable
+    [window_role="dialog"] floating enable
+    [window_type="dialog"] floating enable
+
+
+
+    # dolphin, ark, kate
+    [title="Session Chooser — Kate"] floating enable
+    [app_id="org.freedesktop.impl.portal.desktop.kde"] floating enable
+    [title="^(Copying|Moving|Compressing|Extracting).*— Dolphin"] floating enable, resize set 500 100
+    [title="^(File|Folder)\s*Already Exists\s*—\s*"] floating enable
+    [title="^Information\s*—\s*Dolphin"] floating enable
+    [app_id="org.kde.ark"] floating enable
+    [title="Firefox - Choose User Profile"] floating enable
+
+    #[title="Steam"] floating enable
+    [instance="steamwebhelper"] floating enable
+    # firefox
+    [title="Firefox — Sharing Indicator"] floating enable
+    [title="Picture-in-Picture"] floating enable, sticky true
+
+    [class="Caprine"] move to scratchpad, scratchpad show, $floating_pos
+    [app_id="org.strawberrymusicplayer.strawberry"] move to scratchpad, scratchpad show, $floating_pos
+    [app_id="Cider"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+
+    # [title="Spotify Premium"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+    [class="Spotify"] move to scratchpad, scratchpad show, $floating_pos, stiky true
+    
+    [app_id="io.missioncenter.MissionCenter"] move to scratchpad, scratchpad show, $floating_pos
+    [app_id="@filen/desktop"] move to scratchpad, scratchpad show, $floating_pos
+
+    [app_id="gedit"] move to scratchpad, scratchpad show, $floating_pos
+
+    [title="nvtop"] floating enable
+    [title="Htop"] floating enable
+
+    [app_id="org.gnome.SystemMonitor"] move to scratchpad, scratchpad show, $floating_pos
+
+    [app_id="qalculate-qt"] floating enable, sticky true, resize set 500 700, move right 400px, move down 100px
+    [app_id="org.kde.kalgebra"] floating enable, sticky true, $floating_pos
+
+    # tray icons
+    [app_id="syncthingtray"] resize set 200 400, $tray_ic
+    [app_id="IVPN"] $tray_ic
+    [app_id="Bitwarden"] $tray_ic
+    [app_id="filen-desktop"] $tray_ic
+    [app_id="org.fcitx.fcitx5-config-qt"]  $tray_ic
+    [app_id="blueman-manager"]  $tray_ic
+    [app_id="pavucontrol"] resize set 500 1000,  $tray_ic
+    [app_id="nm-connection-editor"] $tray_ic
+    [app_id="Mullvad VPN"] $tray_ic
+}
+
+
+# import theme
+include ./theme

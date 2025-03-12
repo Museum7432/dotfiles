@@ -19,8 +19,8 @@ for dir in $profile_dirs; do
         echo "  unlink user.js in $pname"
     fi
 
-    if [ -L "$dest_chrome" ]; then 
-        unlink $dest_chrome
-        echo "  unlink chrome in $pname"
-    fi
+    # if [ -L "$dest_chrome" ]; then
+    #     unlink $dest_chrome
+    #     echo "  unlink chrome in $pname"
+    # fi
 done

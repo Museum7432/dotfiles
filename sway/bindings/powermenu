@@ -19,6 +19,6 @@ mode "$powermenu" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+shift+e mode "$powermenu"
+bindsym Ctrl+Alt+Delete mode "$powermenu"
 
 bindsym $mod+Escape exec 'gtklock -d'

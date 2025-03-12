@@ -16,7 +16,7 @@
   ],
   "modules-right": [
     "custom/gpu_status",
-    "privacy",
+    // "privacy",
     // "custom/warp",
     "tray",
     "battery",
@@ -139,24 +139,24 @@
     "restart-interval": 2,
     "format": "{}"
   },
-  "privacy": {
-    "icon-spacing": 4,
-    "icon-size": 10,
-    "transition-duration": 250,
-    "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      },
-      {
-        "type": "audio-in",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ],
-    "rotate": 270
-  },
+  // "privacy": {
+  //   "icon-spacing": 4,
+  //   "icon-size": 10,
+  //   "transition-duration": 250,
+  //   "modules": [
+  //     {
+  //       "type": "screenshare",
+  //       "tooltip": true,
+  //       "tooltip-icon-size": 24
+  //     },
+  //     {
+  //       "type": "audio-in",
+  //       "tooltip": true,
+  //       "tooltip-icon-size": 24
+  //     }
+  //   ],
+  //   "rotate": 270
+  // },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",

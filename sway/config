@@ -1,36 +1,38 @@
 
 include /etc/sway/config.d/*
 
-#exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 
-# Logo key. Use Mod1 for Alt.
-set $mod Mod4
-# Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
-# Your preferred terminal emulator
+# settings
+set {
+    # Primary mod key.
+    # Mod4 is Meta key, Mod1 is Alt.
+    $mod Mod4
 
-set $term alacritty
+    # Add Vim key support
+    $left h
+    $down j
+    $up k
+    $right l
 
+    # Default terminal emulator
+    $term alacritty
 
-# select wallpaper
+    # wallpaper
+    $fallback_wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 
-set $fallback_wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+    # random wallpaper on start up
+    $wallpaper_dir ~/.wallpapers/
 
-set $wallpaper_dir ~/.wallpapers/
+    $screenshot_path ~/.screenshots/ps_$(date +"%Y%m%d%H%M%S").png  
+}
 
+# select the wallpaper here
 # if wallpaper_dir is empty then use the fallback_wallpaper
 set $_wallpaper_dir $(if [[ -d $wallpaper_dir && $(ls $wallpaper_dir) ]]; then echo $wallpaper_dir ;else echo $fallback_wallpaper; fi)
-
 set $wallpaper $(find "$_wallpaper_dir" -maxdepth 1 -type f | shuf -n 1)
 
-set $screenshot_path ~/.screenshots/ps_$(date +"%Y%m%d%H%M%S").png
-
-
-input type:keyboard xkb_numlock enabled
 
 ### Output configuration
 #
@@ -43,9 +45,17 @@ input type:keyboard xkb_numlock enabled
 output HDMI-A-1 resolution 1920x1080@75Hz subpixel rgb scale_filter smart position 0,0
 # workspace 1 output HDMI-A-1
 
-include ./bindings/a
+include ./bindings/basic
 
-include ./inputs/a
+# input
+# Enable numlock by default
+input type:keyboard xkb_numlock enabled
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+}
+
 
 # waybar
 bar {
@@ -56,6 +66,6 @@ bar {
 output * bg $wallpaper fill
 bindsym $mod+o output * bg $wallpaper fill
 
-include ./tweaks/a
+include ./ui/application_defaults
 
 include ./autostarts

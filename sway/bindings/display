@@ -1,6 +1,0 @@
-# toggle laptop's display
-
-bindsym $mod+m output "eDP-1" toggle
-
-# mirror screen
-bindcode $mod+33 exec 'if ! pidof -x wl-present >> /dev/null; then wl-present mirror eDP-1; fi'

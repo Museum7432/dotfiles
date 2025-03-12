@@ -6,6 +6,7 @@ exec swayidle -w \
 exec /usr/lib/kf6/baloo_file
 # exec wl-paste -t text --watch clipman store --no-persist
 
+# Auth with polkit-gnome
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec /usr/lib/polkit-kde-authentication-agent-1
 
@@ -30,8 +31,9 @@ exec /usr/bin/gammastep-indicator
 
 exec /usr/bin/filen-desktop
 
+exec /usr/bin/swayrd
 # exec /usr/bin/dunst
-exec swaync
+# exec swaync
 
 # exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0 
 

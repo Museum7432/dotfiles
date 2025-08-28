@@ -2,15 +2,15 @@
 #
 # powermenu
 #
-set $powermenu 1_󰐥  2_󰐦  3_󰜉  4_󰒲  5_󰍃
+set $powermenu p_󰐥 h_󰐦  r_󰜉  s_󰒲  l_󰍃
 mode "$powermenu" {
-    bindsym 1 exec 'shutdown now'
+    bindsym p exec 'shutdown now'
 
-    bindsym 2 exec 'systemctl hibernate', mode "default"
+    bindsym h exec 'systemctl hibernate', mode "default"
     
-    bindsym 3 exec 'systemctl reboot'
-    bindsym 4 exec 'systemctl suspend', mode "default"
-    bindsym 5 exec 'swaymsg exit', mode "default"
+    bindsym r exec 'systemctl reboot'
+    bindsym s exec 'systemctl suspend', mode "default"
+    bindsym l exec 'swaymsg exit', mode "default"
 
     # bindsym 6 exec "swaylock -f -c 000000 -i $wallpaper", mode "default"
 

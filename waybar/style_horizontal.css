@@ -1,0 +1,190 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "RobotoMono Nerd Font", "Symbols Nerd Font", "DejaVu Sans";
+    font-size: 12px;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#waybar {
+    background: #232323;
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    color: #F8F9FA;
+}
+
+
+#battery,
+#clock,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#workspaces,
+#backlight,
+#scratchpad,
+#window,
+#custom-warp,
+#custom-gpu_status {
+    padding-left: 5px;
+    padding-right: 4px;
+}
+
+#mode,
+#custom-warp,
+#custom-gpu_status,
+#workspaces {
+    padding-left: 5px;
+}
+
+#workspaces {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    /* margin: 0px; */
+    /* margin-top: 5px; */
+}
+
+#workspaces button {
+    /* background: transparent; */
+    color: #F8F9FA;
+    border-top: 2px solid transparent;
+    padding: 1px;
+}
+
+#workspaces button.focused {
+    border-color: #4c7899;
+    background-color: #285577;
+
+}
+
+#workspaces button.urgent {
+    border-color: #c9545d;
+}
+
+#workspaces button:hover {
+    background: #285577;
+    box-shadow: none;
+    /* Remove predefined box-shadow */
+    text-shadow: none;
+    /* Remove predefined text-shadow */
+    /* background: none; */
+    /* Remove predefined background color (white) */
+    transition: none;
+    /* Disable predefined animations */
+}
+
+#window {
+    /* background: rgba(255, 255, 255, 0.05); */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* window#waybar.empty #window {
+    background: transparent;
+} */
+
+
+
+
+#battery {
+    padding: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#battery.full {
+    color: #ffffff;
+    background-color: rgba(20, 193, 199, 0.662);
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #ffffff;
+    background-color: rgba(38, 166, 91, 0.662);
+}
+
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+
+#pulseaudio {
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#pulseaudio.muted {
+    background-color: rgba(27, 145, 145, 0.666);
+}
+
+#tray {
+    background-color: #313131;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#idle_inhibitor {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#idle_inhibitor.activated {
+    background-color: rgba(255, 255, 255, 0.158);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+
+#custom-notification {
+    padding-right: 15px;
+}
+
+#taskbar {
+    background: rgba(255, 255, 255, 0.05);
+    margin-left: 10px;
+    padding: 0;
+}
+
+#taskbar button {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#taskbar.empty {
+    background: transparent;
+}
+
+#taskbar button.active {
+    background-color: rgb(100, 114, 125);
+}
+
+#scratchpad {
+    background: transparent;
+    padding-left: 10px;
+}
+
+/* separator */
+#clock,
+#pulseaudio {
+    border-right: 1px solid #515151;
+    margin-right: 10px;
+    padding-right: 10px;
+}

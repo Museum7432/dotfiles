@@ -269,16 +269,16 @@ user_pref("browser.tabs.tabMinWidth", 128);
 
 // copied from mullvad browser
 user_pref("privacy.resistFingerprinting", true);
-user_pref(
-  "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts",
-  true,
-);
+// user_pref(
+//   "privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts",
+//   false,
+// );
 user_pref("privacy.resistFingerprinting.block_mozAddonManager", true);
 user_pref("privacy.resistFingerprinting.exemptedDomains", "*.example.invalid");
 user_pref("privacy.resistFingerprinting.jsmloglevel", "Warn");
 user_pref("privacy.resistFingerprinting.letterboxing", false);
 
-user_pref("privacy.resistFingerprinting.randomDataOnCanvasExtract", true);
+// user_pref("privacy.resistFingerprinting.randomDataOnCanvasExtract", true);
 user_pref("privacy.resistFingerprinting.reduceTimerPrecision.jitter", true);
 user_pref(
   "privacy.resistFingerprinting.reduceTimerPrecision.microseconds",
@@ -294,7 +294,6 @@ user_pref(
   "services.sync.prefs.sync.privacy.resistFingerprinting.reduceTimerPrecision.microseconds",
   true,
 );
-user_pref("privacy.resistFingerprinting.randomDataOnCanvasExtract", true);
 
 user_pref("privacy.firstparty.isolate", true);
 

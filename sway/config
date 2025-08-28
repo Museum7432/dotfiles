@@ -56,6 +56,9 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+input type:mouse {
+    accel_profile "flat"
+}
 
 # waybar
 bar {

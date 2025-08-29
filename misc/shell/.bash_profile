@@ -42,8 +42,6 @@ if [ "$(tty)" = "/dev/tty1" ] || [ "$(tty)" = "/dev/ttyv0" ] ; then
 	export IMSETTINGS_MODULE=fcitx
 	
 	export XDG_MENU_PREFIX=plasma-
-	/usr/bin/kbuildsycoca6
-
 	export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 	# theme

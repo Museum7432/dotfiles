@@ -1,7 +1,0 @@
-envycontrol
-ivpn-ui
-kvantum-theme-whitesur-git
-pyenv-virtualenv
-vscodium-bin
-whitesur-gtk-theme
-whitesur-icon-theme

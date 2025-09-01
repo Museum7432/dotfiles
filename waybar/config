@@ -15,7 +15,7 @@
     "sway/mode"
   ],
   "modules-right": [
-    "custom/gpu_status",
+    // "custom/gpu_status",
     // "privacy",
     // "custom/warp",
     "tray",

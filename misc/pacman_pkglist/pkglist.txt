@@ -105,3 +105,12 @@ zip
 zsh-autocomplete
 zsh-autosuggestions
 zsh-syntax-highlighting
+
+
+pipectl
+wireless_tools
+tuned-ppd
+rofi
+clang
+eslint
+pyright

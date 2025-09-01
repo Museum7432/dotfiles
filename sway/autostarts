@@ -1,10 +1,10 @@
 exec swayidle -w \
-        timeout 300 "brightnessctl -s && brightnessctl s 1" resume "brightnessctl -r"  \
-        timeout 1800 "systemctl suspend" \
-        before-sleep 'gtklock -d && playerctl pause'
+        timeout 300 "brightnessctl -s && brightnessctl s 1%" resume "brightnessctl -r"  \
+        timeout 1800 "systemctl hibernate" \
+        before-sleep 'playerctl pause'
 
-exec /usr/lib/kf6/baloo_file
-# exec wl-paste -t text --watch clipman store --no-persist
+# exec /usr/lib/kf6/baloo_file
+exec wl-paste -t text --watch clipman store --no-persist
 
 # Auth with polkit-gnome
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -14,7 +14,7 @@ exec /usr/bin/nm-applet --indicator
 #exec xdg-user-dirs-update
 
 # exec env XDG_MENU_PREFIX=plasma- kbuildsycoca6
-exec kbuildsycoca6
+# exec kbuildsycoca6
 # exec /opt/ivpn/ui/bin/ivpn-ui --enable-features=UseOzonePlatform --ozone-platform=wayland --hidden
 
 exec /usr/bin/blueman-applet
@@ -23,19 +23,19 @@ exec /usr/bin/fcitx5
 
 # exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 
-exec "sleep 1 && /opt/Mullvad\ VPN/mullvad-vpn --hidden"
+exec "/opt/Mullvad\ VPN/mullvad-vpn --hidden"
 
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
 
-exec /usr/bin/gammastep-indicator
+# exec /usr/bin/gammastep-indicator
 
 exec /usr/bin/filen-desktop
 
 exec /usr/bin/swayrd
 # exec /usr/bin/dunst
-# exec swaync
+exec swaync
 
-# exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0 
+# exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0
 
 # start syncthing in splittunnel
 # exec /usr/bin/echo y | /usr/bin/ivpn exclude /usr/bin/syncthing -no-browser -no-restart -logflags=3

@@ -16,8 +16,9 @@
   ],
   "modules-right": [
     // "custom/gpu_status",
-    // "privacy",
-    // "custom/warp",
+    // "custom/warp",X
+    "temperature",
+    "privacy",
     "tray",
     "battery",
     "pulseaudio",
@@ -42,6 +43,14 @@
   //   "tooltip-format-disconnected": "",
   //   "interval": 3
   // },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    // "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C ",
+    "format": "{temperatureC}°C ",
+    "rotate": 270
+  },
   "sway/workspaces": {
     // "disable-scroll": true,
     "all-outputs": true,
@@ -139,24 +148,24 @@
     "restart-interval": 2,
     "format": "{}"
   },
-  // "privacy": {
-  //   "icon-spacing": 4,
-  //   "icon-size": 10,
-  //   "transition-duration": 250,
-  //   "modules": [
-  //     {
-  //       "type": "screenshare",
-  //       "tooltip": true,
-  //       "tooltip-icon-size": 24
-  //     },
-  //     {
-  //       "type": "audio-in",
-  //       "tooltip": true,
-  //       "tooltip-icon-size": 24
-  //     }
-  //   ],
-  //   "rotate": 270
-  // },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 10,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24
+      }
+    ],
+    "rotate": 270
+  },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",

@@ -5,16 +5,16 @@ SAVEHIST=1000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-# zstyle :compinstall filename '/home/arch/.zshrc'
+zstyle :compinstall filename '/home/arch/.zshrc'
 
-# autoload -Uz compinit
-# compinit
+autoload -Uz compinit
+compinit
 # End of lines added by compinstall
 # autoload -Uz promptinit
 # promptinit
 # prompt suse
 
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 PROMPT='%F{blue}%~ %(?.%F{green}.%F{red})❯%b%f '
 

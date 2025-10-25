@@ -1,4 +1,7 @@
 #!/bin/sh
+
+export EDITOR=vim
+
 # Session
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
@@ -33,16 +36,23 @@ export GLFW_IM_MODULE=fcitx
 export INPUT_METHOD=fcitx
 export IMSETTINGS_MODULE=fcitx
 
-export XDG_MENU_PREFIX=plasma-
+export XDG_MENU_PREFIX=arch-
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 export QT_QPA_PLATFORMTHEME=qt6ct
 
-# export WLR_NO_HARDWARE_CURSORS=1
+export WLR_NO_HARDWARE_CURSORS=1
+# export XCURSOR_THEME="Windows-10"
+# export XCURSOR_SIZE="24"
 
-#export WLR_RENDERER=vulkan
+# export GTK_THEME="Breeze:dark"
+
+export WLR_RENDERER=vulkan
 export XDG_CURRENT_DESKTOP=sway
 # exec sway "$@"
+
+# needed for rocm on 780m APU
+export HSA_OVERRIDE_GFX_VERSION=11.0.2
 
 #
 # If you use systemd and want sway output to go to the journal, use this
@@ -50,3 +60,4 @@ export XDG_CURRENT_DESKTOP=sway
 #
 exec systemd-cat --identifier=sway sway "$@"
 #
+

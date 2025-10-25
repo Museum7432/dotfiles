@@ -25,7 +25,7 @@ set {
     # random wallpaper on start up
     $wallpaper_dir ~/.wallpapers/
 
-    $screenshot_path ~/.screenshots/ps_$(date +"%Y%m%d%H%M%S").png
+    $screenshot_path ~/.screenshots/ps_$(date +"%Y%m%d%H%M%S").jpg
 }
 
 # select the wallpaper here

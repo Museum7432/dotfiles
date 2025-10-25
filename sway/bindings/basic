@@ -244,8 +244,8 @@ bindsym {
 # Screen capture
 #
 
-set $selected_cmd grim -g "$(slurp)" $screenshot_path
-set $whole_cmd grim $screenshot_path
+set $selected_cmd grim -t jpeg -g "$(slurp)" $screenshot_path
+set $whole_cmd grim -t jpeg $screenshot_path
 # selected
 bindsym $mod+Print exec $selected_cmd
 # mod+'

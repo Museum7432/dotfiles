@@ -16,7 +16,8 @@
   ],
   "modules-right": [
     // "custom/gpu_status",
-    // "custom/warp",X
+    // "custom/warp",
+    // "systemd-failed-units",
     "temperature",
     "privacy",
     "tray",
@@ -35,6 +36,11 @@
       "kitty"
     ]
   },
+  // "systemd-failed-units": {
+  //   "system": true,
+  //   "user": true,
+  //   "rotate": 270
+  // },
   // Modules configuration
   // "network": {
   //   "format": " {bandwidthDownBytes}  {bandwidthUpBytes}",

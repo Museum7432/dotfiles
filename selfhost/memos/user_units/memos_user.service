@@ -1,0 +1,13 @@
+[Unit]
+Description=run memos
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.dotfiles/selfhost/memos
+
+ExecStart=bash run_memos.sh
+Restart=no
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=on-demand languagetool proxy (Port {8081}).
+Requires=languagetool-proxy.socket
+After=languagetool-proxy.socket
+
+[Service]
+Type=simple
+
+ExecStartPre=/bin/bash -c 'systemctl --user start languagetool_user.service && timeout 60 bash -c "until nc -z localhost 8082; do sleep 0.5; done"'
+
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd --exit-idle-time=15min localhost:8082
+
+ExecStopPost=/usr/bin/systemctl --user stop languagetool_user.service

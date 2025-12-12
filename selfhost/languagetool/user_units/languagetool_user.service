@@ -1,0 +1,13 @@
+[Unit]
+Description=run languagetool
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/.dotfiles/selfhost/languagetool
+
+ExecStart=languagetool --http --config server_config --port 8082 --allow-origin "*" --public
+Restart=no
+
+[Install]
+WantedBy=default.target

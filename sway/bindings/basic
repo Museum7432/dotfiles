@@ -237,7 +237,7 @@ bindsym {
     $mod+b exec firefox
 
     # vscode
-    $mod+c exec code
+    $mod+c exec vscodium
 }
 
 #

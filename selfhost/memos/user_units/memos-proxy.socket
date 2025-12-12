@@ -1,0 +1,9 @@
+[Unit]
+Description=Socket for on-demand memos proxy (Port 5230).
+
+[Socket]
+ListenStream=5230
+Accept=no
+
+[Install]
+WantedBy=sockets.target

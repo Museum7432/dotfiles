@@ -1,0 +1,9 @@
+[Unit]
+Description=Socket for on-demand openwebUI container proxy (Port 3000).
+
+[Socket]
+ListenStream=3000
+Accept=no
+
+[Install]
+WantedBy=sockets.target

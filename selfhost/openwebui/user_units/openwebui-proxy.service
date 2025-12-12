@@ -1,0 +1,13 @@
+[Unit]
+Description=on-demand openwebUI container proxy (Port {3000}).
+Requires=openwebui-proxy.socket
+After=openwebui-proxy.socket
+
+[Service]
+Type=simple
+
+ExecStartPre=/bin/bash -c 'systemctl --user start openwebui.service && timeout 60 bash -c "until nc -z localhost 2999; do sleep 0.5; done"'
+
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd --exit-idle-time=15min localhost:2999
+
+ExecStopPost=/usr/bin/systemctl --user stop openwebui.service

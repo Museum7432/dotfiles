@@ -1,0 +1,9 @@
+[Unit]
+Description=Socket for on-demand languagetool proxy (Port 8081).
+
+[Socket]
+ListenStream=8081
+Accept=no
+
+[Install]
+WantedBy=sockets.target

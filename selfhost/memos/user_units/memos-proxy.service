@@ -1,0 +1,13 @@
+[Unit]
+Description=on-demand memos (Port {5230}).
+Requires=memos-proxy.socket
+After=memos-proxy.socket
+
+[Service]
+Type=simple
+
+ExecStartPre=/bin/bash -c 'systemctl --user start memos_user.service && timeout 60 bash -c "until nc -z localhost 5229; do sleep 0.5; done"'
+
+ExecStart=/usr/lib/systemd/systemd-socket-proxyd --exit-idle-time=15min localhost:5229
+
+ExecStopPost=/usr/bin/systemctl --user stop memos_user.service

@@ -23,7 +23,8 @@ exec /usr/bin/fcitx5
 
 # exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 
-exec "/opt/Mullvad\ VPN/mullvad-vpn"
+# exec "sleep 1 && /opt/Mullvad\ VPN/mullvad-vpn"
+exec "sleep 1 && /usr/bin/mullvad-vpn"
 
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
 
@@ -33,7 +34,7 @@ exec /usr/bin/filen-desktop
 
 exec /usr/bin/swayrd
 # exec /usr/bin/dunst
-exec swaync
+# exec swaync
 
 # exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0
 

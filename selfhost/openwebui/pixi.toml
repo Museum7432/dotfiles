@@ -1,0 +1,17 @@
+[workspace]
+channels = ["https://prefix.dev/conda-forge"]
+name = "open_webui"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+serve = "bash run_openui.sh"
+
+[dependencies]
+python = "==3.11"
+
+[pypi-dependencies]
+torch = { version = "*", index = "https://download.pytorch.org/whl/cpu" }
+torchvision = { version = "*", index = "https://download.pytorch.org/whl/cpu" }
+torchaudio = { version = "*", index = "https://download.pytorch.org/whl/cpu" }
+open-webui = ">=0.6.34"

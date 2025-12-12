@@ -48,3 +48,10 @@ user_pref("nglayout.initialpaint.delay_in_oopif", 0); // default=5
 user_pref("media.av1.enabled", false);
 
 user_pref("browser.contentblocking.category", "strict");
+
+
+user_pref("browser.tabs.insertAfterCurrent", true);
+user_pref("browser.tabs.insertAfterCurrentExceptPinned", true);
+
+
+

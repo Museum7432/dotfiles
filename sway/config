@@ -43,7 +43,7 @@ set $wallpaper $(find "$_wallpaper_dir" -maxdepth 1 -type f | shuf -n 1)
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output HDMI-A-1 resolution 1920x1080@75Hz subpixel rgb scale_filter smart position 0,0
-output eDP-1 resolution 1920x1080@60Hz subpixel rgb scale_filter smart
+output eDP-1 resolution 1920x1080@60Hz subpixel rgb scale_filter smart allow_tearing on
 
 # workspace 1 output HDMI-A-1
 

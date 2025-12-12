@@ -39,9 +39,10 @@ export IMSETTINGS_MODULE=fcitx
 export XDG_MENU_PREFIX=arch-
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
-export QT_QPA_PLATFORMTHEME=qt6ct
+# export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
 
-export WLR_NO_HARDWARE_CURSORS=1
+# export WLR_NO_HARDWARE_CURSORS=1
 # export XCURSOR_THEME="Windows-10"
 # export XCURSOR_SIZE="24"
 
@@ -52,8 +53,10 @@ export XDG_CURRENT_DESKTOP=sway
 # exec sway "$@"
 
 # needed for rocm on 780m APU
-export HSA_OVERRIDE_GFX_VERSION=11.0.2
+export HSA_OVERRIDE_GFX_VERSION=11.0.1
+export LLVM_PATH=/opt/rocm/llvm
 
+export VDPAU_DRIVER=radeonsi
 #
 # If you use systemd and want sway output to go to the journal, use this
 # instead of the `exec sway "$@"` above:

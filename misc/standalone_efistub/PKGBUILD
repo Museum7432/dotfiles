@@ -1,0 +1,28 @@
+pkgname=systemd-boot-efistub
+pkgver=1.0.0
+pkgrel=1
+arch=('x86_64')
+pkgdesc="Extract and copy linuxx64.efi.stub file from systemd package."
+
+# conflicts=("systemd")
+
+
+source=("http://ftp.debian.org/debian/pool/main/s/systemd/systemd-boot-efi_257.9-1~deb13u1_amd64.deb")
+sha256sums=("602d0524a3ff2cf2f18175b06c2ac725fd9c046373b20947251d6da57e0672c1")
+
+build() {
+    # extract the debian package
+    ar x 'systemd-boot-efi_257.9-1~deb13u1_amd64.deb' data.tar.xz
+    
+    # then the linuxx64.efi.stub file
+    tar xJf data.tar.xz ./usr/lib/systemd/boot/efi/linuxx64.efi.stub
+
+}
+
+package() {
+    # install to /usr/bin for testing since I'm still on a systemd system
+    install -Dm644 "./usr/lib/systemd/boot/efi/linuxx64.efi.stub" "${pkgdir}/usr/bin/linuxx64.efi.stub"
+
+    # install -Dm644 "./usr/lib/systemd/boot/efi/linuxx64.efi.stub" "${pkgdir}/usr/lib/systemd/boot/efi/linuxx64.efi.stub"
+}
+

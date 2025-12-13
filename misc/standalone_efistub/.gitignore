@@ -1,0 +1,5 @@
+# Ignore everything
+*
+# aside from
+!PKGBUILD
+!.gitignore

@@ -9,7 +9,7 @@ export XDG_CURRENT_DESKTOP=sway
 
 # Wayland stuff
 export QT_QPA_PLATFORM=wayland
-export SDL_VIDEODRIVER=wayland
+export SDL_VIDEODRIVER=wayland,x11
 export _JAVA_AWT_WM_NONREPARENTING=1
 export GDK_DEBUG=portals
 #export GTK_USE_PORTAL=1
@@ -25,8 +25,9 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-export GNOME_KEYRING_CONTROL=$XDG_RUNTIME_DIR/keyring
+eval $(ssh-agent) > /dev/null
+#export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
+#export GNOME_KEYRING_CONTROL=$XDG_RUNTIME_DIR/keyring
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULES="wayland;fcitx;ibus"
@@ -37,10 +38,10 @@ export INPUT_METHOD=fcitx
 export IMSETTINGS_MODULE=fcitx
 
 export XDG_MENU_PREFIX=arch-
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+#export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
-# export QT_QPA_PLATFORMTHEME=qt6ct
-export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
+export QT_QPA_PLATFORMTHEME=qt6ct
+#export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
 
 # export WLR_NO_HARDWARE_CURSORS=1
 # export XCURSOR_THEME="Windows-10"
@@ -50,17 +51,20 @@ export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
 
 export WLR_RENDERER=vulkan
 export XDG_CURRENT_DESKTOP=sway
-# exec sway "$@"
 
-# needed for rocm on 780m APU
-export HSA_OVERRIDE_GFX_VERSION=11.0.1
-export LLVM_PATH=/opt/rocm/llvm
+# needed for running rocm on 780m APU
+# export HSA_OVERRIDE_GFX_VERSION=11.0.1
+# export LLVM_PATH=/opt/rocm/llvm
 
 export VDPAU_DRIVER=radeonsi
 #
 # If you use systemd and want sway output to go to the journal, use this
 # instead of the `exec sway "$@"` above:
 #
-exec systemd-cat --identifier=sway sway "$@"
+#exec systemd-cat --identifier=sway sway "$@"
 #
+
+# wipe log
+rm .sway_logs
+exec sway "$@" 2>&1 >> .sway_logs
 

@@ -1,0 +1,7 @@
+type            = process
+command         = "/usr/bin/mullvad-daemon" -v --disable-stdout-timestamps
+smooth-recovery = true
+after           = NetworkManager
+after           = mullvadearlylocking
+before          = network-online.target
+before          = logind

@@ -1,0 +1,5 @@
+type            = process
+command         = "/usr/bin/mullvad-daemon" -v --initialize-early-boot-firewall
+smooth-recovery = true
+before          = pre-network.target 
+after           = local.target

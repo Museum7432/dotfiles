@@ -1,0 +1,5 @@
+type            = process
+working-dir     = $HOME/Projects/openwebui
+command         = /usr/bin/pixi run serve
+depends-on      = dbus
+log-type        = buffer

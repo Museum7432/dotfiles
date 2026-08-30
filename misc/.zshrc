@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -18,6 +18,7 @@ compinit
 
 PROMPT='%F{blue}%~ %(?.%F{green}.%F{red})❯%b%f '
 
+export PATH="$PATH:$HOME/.local/bin"
 alias ls='/usr/bin/ls -hF --color=auto'
 alias grep='/usr/bin/grep --color=auto'
 alias diff='/usr/bin/colordiff'
@@ -41,6 +42,8 @@ setopt HIST_BEEP
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey "^[[1;5C" forward-word
+
+source <(fzf --zsh)
 
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

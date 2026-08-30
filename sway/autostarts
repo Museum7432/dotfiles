@@ -1,10 +1,11 @@
 exec swayidle -w \
         timeout 300 "brightnessctl -s && brightnessctl s 1%" resume "brightnessctl -r"  \
-        timeout 1800 "systemctl hibernate" \
+        timeout 1800 "loginctl hibernate" \
         before-sleep 'playerctl pause'
 
 # exec /usr/lib/kf6/baloo_file
-exec wl-paste -t text --watch clipman store --no-persist
+# exec wl-paste -t text --watch clipman store --no-persist
+exec "wl-clip-persist --clipboard regular"
 
 # Auth with polkit-gnome
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -23,18 +24,21 @@ exec /usr/bin/fcitx5
 
 # exec $HOME/.local/bin/filen_x86_64.AppImage --enable-features=UseOzonePlatform --ozone-platform=wayland
 
+# disable the laptop screen if the second screen is detected
+exec "(swaymsg -t get_outputs | grep HDMI-A-1) && swaymsg output eDP-1 disable"
+
 # exec "sleep 1 && /opt/Mullvad\ VPN/mullvad-vpn"
-exec "sleep 1 && /usr/bin/mullvad-vpn"
+# exec "sleep 1 && /usr/bin/mullvad-vpn"
 
 # exec /usr/lib/at-spi-bus-launcher --launch-immediately
 
 # exec /usr/bin/gammastep-indicator
 
-exec /usr/bin/filen-desktop
+# exec /usr/bin/filen-desktop
 
 exec /usr/bin/swayrd
 # exec /usr/bin/dunst
-# exec swaync
+exec swaync
 
 # exec_always rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | sov -t 0
 

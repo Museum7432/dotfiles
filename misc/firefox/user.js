@@ -29,6 +29,25 @@ user_pref("mousewheel.with_alt.action", 3);
 user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
 user_pref("widget.use-xdg-desktop-portal.mime-handler", 1);
 
+user_pref("browser.ml.chat.enabled", false);
+user_pref("browser.ml.enable", false);
+user_pref("extensions.ml.enabled", false);
+user_pref("browser.ml.linkPreview.enabled", false);
+user_pref("browser.ml.pageAssist.enabled", false);
+user_pref("browser.ml.smartAssist.enabled", false);
+user_pref("browser.tabs.groups.smart.enabled", false);
+user_pref("browser.search.visualSearch.featureGate", false);
+user_pref("browser.urlbar.quicksuggest.mlEnabled", false);
+user_pref("pdfjs.enableAltText", false);
+user_pref("places.semanticHistory.featureGate", false);
+user_pref("sidebar.revamp", false);
+
+user_pref("browser.tabs.groups.enabled", false);
+
+// user_pref("javascript.options.wasm", false);
+// user_pref("javascript.options.asmjs", false);
+
+
 /**************************************************
  * SOURCE: https://github.com/yokoffing/Betterfox *
  **************************************************/

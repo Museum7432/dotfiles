@@ -1,0 +1,1 @@
+rw amd_pstate=active hibernate.compressor=lz4 quiet amdgpu.ppfeaturemask=0xfff7ffff

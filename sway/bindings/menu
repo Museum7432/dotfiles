@@ -12,9 +12,9 @@ set $menu_cmd_prefix j4-dmenu-desktop --dmenu='bemenu -b -W 0.3 -i --nb \#3f3f3f
 
 
 set $menu_cmd $menu_cmd_prefix -I
-set $menu_cmd_ivpn_tunnel $menu_cmd_prefix --wrapper="swaymsg exec yes | ivpn exclude" --skip-i3-exec-check
+# set $menu_cmd_ivpn_tunnel $menu_cmd_prefix --wrapper="swaymsg exec yes | ivpn exclude" --skip-i3-exec-check
 
-set $menu_cmd_mullvad_tunnel $menu_cmd_prefix --wrapper="mullvad-exclude" --skip-i3-exec-check
+# set $menu_cmd_mullvad_tunnel $menu_cmd_prefix --wrapper="mullvad-exclude" --skip-i3-exec-check
 
 
 # set $menu_cmd_ivpn_tunnel $menu_cmd_prefix | xargs swaymsg exec ivpn exclude --
@@ -22,11 +22,10 @@ set $menu_cmd_mullvad_tunnel $menu_cmd_prefix --wrapper="mullvad-exclude" --skip
 set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
 
 # Start your launcher
-# bindsym $mod+d exec $menu
 bindsym $mod+d exec $menu
 
 # for ivpn
 # bindsym $mod+Shift+d exec $menu_cmd_ivpn_tunnel
 
 # for mullvad
-bindsym $mod+Shift+d exec $menu_cmd_mullvad_tunnel
+# bindsym $mod+Shift+d exec $menu_cmd_mullvad_tunnel

@@ -1,0 +1,10 @@
+type            = process
+command         = /usr/bin/adguardhome -w /var/lib/adguardhome -l syslog
+smooth-recovery = true
+restart         = true
+working-dir     = /var/lib/adguardhome
+run-as          = adguardhome
+logfile         = /var/log/dinit/adguardhome.log
+depends-on      = network.target
+before          = login.target
+env-file = /etc/dinit.d/adguardhome.env

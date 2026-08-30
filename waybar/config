@@ -16,11 +16,11 @@
   ],
   "modules-right": [
     // "custom/gpu_status",
-    // "custom/warp",
     // "systemd-failed-units",
     "temperature",
     "privacy",
     "tray",
+    "custom/warp",
     "battery",
     "pulseaudio",
     "custom/notification"
@@ -125,7 +125,7 @@
       ]
     },
     "scroll-step": 2,
-    "on-click": "pamixer -t",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol -t 3",
     "rotate": 270
   },
@@ -193,8 +193,8 @@
     "escape": true
   },
   "custom/warp": {
-    "exec": "if warp-cli status | grep Connected; then echo ; else echo ; fi",
+    "exec": "if warp-cli status | grep Connected; then echo \"<span color='#008000'><b></b></span>\"; else echo \"<span color='#800000'><b></b></span>\"; fi",
     "on-click": "if warp-cli status | grep Connected; then warp-cli disconnect; else warp-cli connect; fi",
-    "restart-interval": 1
+    "restart-interval": 2
   }
 }

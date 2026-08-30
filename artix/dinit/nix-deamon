@@ -1,0 +1,5 @@
+type               = process
+command            = /usr/bin/nix-daemon --daemon
+logfile            = /var/log/dinit/nix-deamon.log
+depends-on         = local.target
+before             = login.target

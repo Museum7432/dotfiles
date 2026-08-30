@@ -1,0 +1,4 @@
+type            = process
+command         = /usr/bin/languagetool --http --config $HOME/.languagetool_cfg
+depends-on      = dbus
+log-type        = buffer

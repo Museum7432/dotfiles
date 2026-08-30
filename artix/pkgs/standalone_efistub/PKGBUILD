@@ -2,7 +2,7 @@ pkgname=systemd-boot-efistub
 pkgver=1.0.0
 pkgrel=1
 arch=('x86_64')
-pkgdesc="Extract and copy linuxx64.efi.stub file from systemd package."
+pkgdesc="Extract and copy linuxx64.efi.stub file from systemd package. For buiding UKI."
 
 conflicts=("systemd")
 

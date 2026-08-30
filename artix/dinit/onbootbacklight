@@ -1,0 +1,3 @@
+type            = scripted
+command         = "/usr/bin/brightnessctl" s 35%
+after           = login.target

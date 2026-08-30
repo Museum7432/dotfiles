@@ -265,5 +265,5 @@ bindcode $mod+33 exec 'if ! pidof -x wl-present >> /dev/null; then wl-present mi
 # configs too long to be here
 include ./powermenu
 include ./menu
-include ./envycontrol
+# include ./envycontrol
 # include ./sys76

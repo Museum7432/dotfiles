@@ -77,7 +77,7 @@ for_window {
 
     # [title="Spotify Premium"] move to scratchpad, scratchpad show, $floating_pos, stiky true
     [class="Spotify"] move to scratchpad, scratchpad show, $floating_pos, stiky true
-    
+
     [app_id="io.missioncenter.MissionCenter"] move to scratchpad, scratchpad show, $floating_pos
     [app_id="@filen/desktop"] move to scratchpad, scratchpad show, $floating_pos
 
@@ -106,3 +106,16 @@ for_window {
 
 # import theme
 include ./theme
+
+
+
+### Output configuration
+#
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+output HDMI-A-1 resolution 1920x1080@60Hz subpixel rgb scale_filter smart allow_tearing on position 0,0
+output eDP-1 resolution 1920x1080@60Hz subpixel rgb scale_filter smart allow_tearing on

@@ -18,7 +18,7 @@ family = "RobotoMono Nerd Font Mono"
 style = "Regular"
 
 [terminal.shell]
-program = "/bin/zsh"
+program = "zsh"
 args = ["-l"]
 
 [env]

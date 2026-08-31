@@ -1,0 +1,6 @@
+type = process
+command = /usr/bin/warp-svc
+smooth-recovery = true
+after           = NetworkManager
+before          = network-online.target
+before          = logind

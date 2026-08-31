@@ -5,7 +5,8 @@
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu wofi --show=drun -i
 
-set $menu_cmd_prefix j4-dmenu-desktop --dmenu='bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log
+set $bemenu_cmd bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20
+set $menu_cmd_prefix j4-dmenu-desktop --dmenu='$bemenu_cmd' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log
 
 
 
@@ -29,3 +30,6 @@ bindsym $mod+d exec $menu
 
 # for mullvad
 # bindsym $mod+Shift+d exec $menu_cmd_mullvad_tunnel
+
+# todo: restyle this latter
+bindcode $mod+47 exec "cliphist list | $bemenu_cmd | cliphist decode | wl-copy"

@@ -1,8 +1,11 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    firefox
-    fastfetch
     gedit
+    mission-center
+    pavucontrol
+    profile-cleaner
+    vlc
+    xeyes
   ];
 }

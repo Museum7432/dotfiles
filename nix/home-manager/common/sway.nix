@@ -9,6 +9,7 @@
     wofi
   ];
 
+  # SWAY
   # copy only the module
   xdg.configFile = {
     "sway/bindings" = { source = ../../../sway/bindings; recursive = true; };
@@ -16,22 +17,23 @@
   };
 
   wayland.windowManager.sway = {
-      enable = true;
-      package = null;
-      config = null;
-      wrapperFeatures.gtk = true;
+    enable = true;
+    package = null;
+    config = null;
+    wrapperFeatures.gtk = true;
 
-      extraConfig = ''
-        include /etc/sway/config.d/*
+    extraConfig = ''
+      include /etc/sway/config.d/*
 
-        seat seat0 xcursor_theme Breeze_Light 24
+      seat seat0 xcursor_theme Breeze_Light 24
 
-        include ${config.xdg.configHome}/sway/bindings/basic
-        include ${config.xdg.configHome}/sway/ui/application_defaults
-      '';
-    };
+      include ${config.xdg.configHome}/sway/bindings/basic
+      include ${config.xdg.configHome}/sway/ui/application_defaults
+    '';
+  };
 
 
+  # WAYBAR
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -44,11 +46,13 @@
     force = true;
   };
 
+  # ALACRITTY
   xdg.configFile."alacritty" = {
     source = ../../../alacritty;
     recursive = true;
   };
 
+  # SWAYNC
   services.swaync = {
     enable = true;
   };
@@ -62,11 +66,20 @@
   services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
 
+  # SWAYR
   programs.swayr = {
     enable = true;
     systemd.enable = true;
+    settings = {misc.seq_inhibit = false;};
   };
 
+
+  # we still need wl-clip-persist to retain the last paste when the app is closed
+  services.wl-clip-persist = {
+    enable = true;
+    clipboardType = "regular";
+    systemdTargets = [ "graphical-session.target" ];
+  };
 
   services.cliphist = {
     enable = true;

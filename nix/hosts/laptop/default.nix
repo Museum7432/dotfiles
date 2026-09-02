@@ -15,8 +15,17 @@
 
   time.timeZone = "Asia/Bangkok";
 
-
-
-
   boot.kernelParams = [ "cfg80211.ieee80211_regdom=VN" ];
+
+  i18n.defaultLocale = "en_US.UTF-8";
+  console.keyMap = "us";
+
+  # amdgpu
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+  hardware.amdgpu.initrd.enable = true;
+  hardware.amdgpu.opencl.enable = true;
+
 }

@@ -1,7 +1,7 @@
 {
   "position": "right", // Waybar position (top|bottom|left|right)
   // "height": 20, // Waybar height (to be removed for auto height),
-  "width": 20,
+  "width": 26,
   // Choose the order of the modules
   "modules-left": [
     "idle_inhibitor",

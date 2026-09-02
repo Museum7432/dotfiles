@@ -6,8 +6,8 @@
   ...
 }: {
   imports = [
+    ./impermanence
     ./sway.nix
-    ./dolphin.nix
     ./packages.nix
   ];
 
@@ -74,6 +74,8 @@
   };
 
 
+  # dolphin fix
+  environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
 
 }

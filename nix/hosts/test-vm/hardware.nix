@@ -2,16 +2,12 @@
 # and may be overwritten by future invocations.  Please make changes
 # to /etc/nixos/configuration.nix instead.
 # we will manage the disk ourself
-{ config, lib, pkgs, modulesPath, ... }:
-
-{
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-
-
-  virtualisation.vmVariant = {
+{ self, config, lib, pkgs, modulesPath, ... }:
+let
+  vmConfig = {
       virtualisation = {
         memorySize = 4096;   # MiB
-        cores = 4;
+        cores = 8;
         diskSize = 16384;    # MiB, the qcow2 size
         # graphics = false;    # serial console instead of a QEMU window
 
@@ -21,10 +17,17 @@
         #   { from = "host"; host.port = 8080; guest.port = 80; }
         # ];
 
-        # sharedDirectories.stuff = {
-        #   source = "/home/me/shared";
-        #   target = "/mnt/shared";
+        # this help testing impermanence
+        # sharedDirectories.persist = {
+        #   # these won't work in pure mode
+        #   # source = builtins.toString ~/.build/vm_persist;
+        #   # source = builtins.toString ../../../.build/vm_persist;
+        #   # source = "${self}/.build";
+        #   # use absolute path instead, clean these up latter
+        #   source = "/var/tmp/nixos-vmtest-persist";
+        #   target = "/nix/persist";
         # };
+        #
 
         # anything else straight to qemu
         qemu.options = [
@@ -35,4 +38,30 @@
         ];
       };
     };
+in
+{
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+
+  virtualisation.vmVariant = lib.mkMerge [vmConfig];
+  virtualisation.vmVariantWithDisko = lib.mkMerge [vmConfig {
+
+    # disko need this to build the impermanence setup
+    virtualisation.fileSystems."/home/arch".neededForBoot = true;
+    virtualisation.fileSystems."/nix".neededForBoot = true;
+    virtualisation.fileSystems."/".neededForBoot = true;
+    #
+    virtualisation.sharedDirectories.persist = {
+      # these won't work in pure mode
+      # source = builtins.toString ~/.build/vm_persist;
+      # source = builtins.toString ../../../.build/vm_persist;
+      # source = "${self}/.build";
+      # use absolute path instead, clean these up latter
+      source = "/var/tmp/nixos-vmtest-persist";
+      target = "/nix/persist";
+    };
+
+  }];
+  virtualisation.vmVariantWithBootLoader = lib.mkMerge [vmConfig];
+
 }

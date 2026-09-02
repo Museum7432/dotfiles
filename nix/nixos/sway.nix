@@ -99,6 +99,8 @@ in
 
     brightnessctl
 
+    wl-mirror
+
   ];
 
   fonts.packages = with pkgs; [

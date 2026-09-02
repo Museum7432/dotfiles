@@ -23,16 +23,24 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    impermanence = {
+      url = "github:nix-community/impermanence";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+
   };
 
-  outputs = { self, nixpkgs, home-manager, disko, plasma-manager, ... }@ inputs: {
+  outputs = { self, nixpkgs, home-manager, disko, plasma-manager, impermanence, ... }@ inputs: {
 
     nixosConfigurations = {
       vmtest = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
+        specialArgs = {inherit self inputs;};
 
         modules = [
+          inputs.impermanence.nixosModules.impermanence
           disko.nixosModules.disko
           ./hosts/test-vm
           ./nixos

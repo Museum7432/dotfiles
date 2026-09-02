@@ -14,8 +14,8 @@
 
   time.timeZone = "Asia/Bangkok";
 
+  boot.kernelParams = [ "cfg80211.ieee80211_regdom=VN" ];
 
-  networking.networkmanager.enable = true;
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 

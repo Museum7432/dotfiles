@@ -3,8 +3,9 @@
   imports = [
     ./packages.nix
     ../common/sway.nix
-    ../common/zsh.nix
+    ../common/shell.nix
     ../common/theme.nix
+    ../common/impermanence
   ];
 
   home.username = "arch";
@@ -13,5 +14,6 @@
 
   programs.home-manager.enable = true;
 
-
+  # stop warp cli from asking for tos
+  home.file.".local/share/warp/accepted-tos.txt".text = "yes";
 }

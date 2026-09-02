@@ -4,5 +4,9 @@
     zsh
     wget
     vim
+    fastfetch
+    htop
+
+    ncdu
   ];
 }

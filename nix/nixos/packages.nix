@@ -6,7 +6,7 @@
     vim
     fastfetch
     htop
-
+    git
     ncdu
   ];
 }

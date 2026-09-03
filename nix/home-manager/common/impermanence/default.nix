@@ -6,7 +6,9 @@
     ./gwenview.nix
     ./zed.nix
     ./gnome_keyring.nix
+    # ./keepassxc.nix
     ./flatpak.nix
+    ./chrome.nix
   ];
 
   # put these dirs on a different paths for isolation
@@ -22,7 +24,6 @@
       "Videos"
 
       ".ssh"
-      ".keepass"
       ".gnupg"
     ];
   };
@@ -33,7 +34,7 @@
       ".cache/mesa_shader_cache"
       ".cache/mozilla"
       ".cache/flatpak"
-
+      ".cache/google-chrome"
     ];
   };
 

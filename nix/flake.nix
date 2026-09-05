@@ -55,9 +55,13 @@
         specialArgs = {inherit inputs;};
 
         modules = [
+          inputs.impermanence.nixosModules.impermanence
+          disko.nixosModules.disko
           ./hosts/laptop
           ./nixos
           ./users
+          home-manager.nixosModules.home-manager
+          ./home-manager
           ];
       };
 

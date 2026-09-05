@@ -1,5 +1,6 @@
 { ... }:
 {
+  boot.loader.limine.enable = true;
 
   fileSystems."/nix".neededForBoot = true;
   fileSystems."/home/arch".neededForBoot = true;

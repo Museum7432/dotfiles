@@ -45,7 +45,7 @@
                   mountpoint = "/nix";
                   mountOptions = [ "compress=zstd" "noatime" ];
                 };
-                we will use qemu for mounting persist, uncomment this for baremetal
+
                 "/persist" = {
                   mountpoint = "/persist";
                   mountOptions = [ "compress=zstd" "noatime" ];

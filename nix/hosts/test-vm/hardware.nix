@@ -25,7 +25,7 @@ let
         #   # source = "${self}/.build";
         #   # use absolute path instead, clean these up latter
         #   source = "/var/tmp/nixos-vmtest-persist";
-        #   target = "/nix/persist";
+        #   target = "/persist";
         # };
         #
 
@@ -58,7 +58,7 @@ in
       # source = "${self}/.build";
       # use absolute path instead, clean these up latter
       source = "/var/tmp/nixos-vmtest-persist";
-      target = "/nix/persist";
+      target = "/persist";
     };
 
   }];

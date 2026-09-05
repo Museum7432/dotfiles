@@ -4,7 +4,7 @@
     kdePackages.gwenview
   ];
 
-  home.persistence."/nix/persist/gwenview" = {
+  home.persistence."/persist/gwenview" = {
     files = [
       ".config/gwenviewrc"
     ];

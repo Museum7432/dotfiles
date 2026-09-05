@@ -8,5 +8,6 @@
     htop
     git
     ncdu
+    compsize
   ];
 }

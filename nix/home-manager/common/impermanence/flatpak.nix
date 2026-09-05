@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  home.persistence."/nix/persist/flatpak" = {
+  home.persistence."/persist/flatpak" = {
     directories = [
       # the bins
       ".local/share/flatpak"

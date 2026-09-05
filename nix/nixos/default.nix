@@ -36,29 +36,6 @@
     powerOnBoot = false;
   };
 
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      kdePackages.xdg-desktop-portal-kde
-      xdg-desktop-portal-gtk
-    ];
-
-    wlr.settings = {
-      screencast = {
-        chooser_type = "dmenu";
-        chooser_cmd = "${pkgs.wofi}/bin/wofi --show=dmenu";
-        # output_name, max_fps, exec_before, exec_after
-      };
-
-    };
-    config.sway = {
-      default = lib.mkDefault [ "wlr" "gtk" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
-      "org.freedesktop.impl.portal.AppChooser" = [ "kde" ];
-    };
-  };
-
 
 
 
@@ -78,5 +55,8 @@
   environment.etc."xdg/menus/applications.menu".source = "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
   services.udisks2.enable = true;
+
+
+  services.gnome.gcr-ssh-agent.enable = true;
 
 }

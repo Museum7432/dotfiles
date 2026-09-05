@@ -3,7 +3,7 @@
   imports = [
     ./hardware.nix
     ./disko.nix
-    # ./boot.nix
+    ./boot.nix
     (import ../common/limits.nix { username = "arch"; })
     ../common/only_hibernation.nix
   ];
@@ -19,4 +19,6 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console.keyMap = "us";
 
+  # we don't need this on a laptop
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

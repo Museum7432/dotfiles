@@ -2,7 +2,7 @@
 {
   services.flatpak.enable = true;
 
-  environment.persistence."/nix/persist/flatpak_system" = {
+  environment.persistence."/persist/flatpak_system" = {
     hideMounts = true;
     directories = [
       "/var/lib/flatpak"

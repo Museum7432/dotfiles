@@ -10,46 +10,10 @@ let
     export XDG_CURRENT_DESKTOP=sway
 
     # Wayland stuff
-    export QT_QPA_PLATFORM=wayland
-    export SDL_VIDEODRIVER=wayland,x11
-    export _JAVA_AWT_WM_NONREPARENTING=1
-    export GDK_DEBUG=portals
-    #export GTK_USE_PORTAL=1
-    # firefox
-    export BROWSER=firefox
-    export MOZ_ENABLE_WAYLAND=1
-
-    # qt wayland
-    export QT_QPA_PLATFORM="wayland;xcb"
-    export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-    #export QT_WAYLAND_FORCE_DPI=physical
-
-    export ELECTRON_OZONE_PLATFORM_HINT=wayland
-
-
-    eval $(ssh-agent) > /dev/null
-    #export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh
-    #export GNOME_KEYRING_CONTROL=$XDG_RUNTIME_DIR/keyring
-
-    export GTK_IM_MODULE=fcitx
-    export QT_IM_MODULES="wayland;fcitx;ibus"
-    export XMODIFIERS=@im=fcitx
-    #export SDL_IM_MODULE=fcitx
-    export GLFW_IM_MODULE=fcitx
-    export INPUT_METHOD=fcitx
-    export IMSETTINGS_MODULE=fcitx
-
-    export XDG_MENU_PREFIX=arch-
-    #export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-
-    export QT_QPA_PLATFORMTHEME=qt6ct
-    #export QT_QPA_PLATFORMTHEME=qt5ct:qt6ct
-
-    # export WLR_NO_HARDWARE_CURSORS=1
-    # export XCURSOR_THEME="Windows-10"
-    # export XCURSOR_SIZE="24"
-
-    # export GTK_THEME="Breeze:dark"
+    # export QT_QPA_PLATFORM=wayland
+    # export SDL_VIDEODRIVER=wayland,x11
+    # export _JAVA_AWT_WM_NONREPARENTING=1
+    # export GDK_DEBUG=portals
 
     export XDG_CURRENT_DESKTOP=sway
 
@@ -70,9 +34,6 @@ let
 in
 {
   services.blueman.enable = true;
-
-  # services.gnome.gnome-keyring.enable = true;
-
 
   programs.sway = {
     enable = true;
@@ -102,6 +63,8 @@ in
 
     wl-mirror
 
+    rofi
+
   ];
 
   fonts.packages = with pkgs; [
@@ -114,19 +77,47 @@ in
 
 
   services.greetd = {
-      enable = true;
+    enable = true;
 
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.greetd}/bin/agreety --cmd sway-run";
-          user = "greeter";
-        };
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.greetd}/bin/agreety --cmd sway-run";
+        user = "greeter";
+      };
 
-        initial_session = {
-          command = "sway-run";
-          user = "arch";    # replace "arch" with your actual NixOS user
-        };
+      initial_session = {
+        command = "sway-run";
+        user = "arch";    # replace "arch" with your actual NixOS user
       };
     };
+  };
+
+
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-gtk
+    ];
+
+    wlr.settings = {
+      screencast = {
+        chooser_type = "dmenu";
+        # TODO: perhaps we should let wofi cache what we select here so that it rememeber the option next time
+        # chooser_cmd = "${pkgs.wofi}/bin/wofi -d -k /dev/null --no-actions -i -G";
+        chooser_cmd = "${pkgs.rofi}/bin/rofi -dmenu -theme android_notification";
+        # output_name, max_fps, exec_before, exec_after
+      };
+
+    };
+    config.sway = {
+      default = lib.mkDefault [ "wlr" "gtk" ];
+      "org.freedesktop.impl.portal.FileChooser" = [ "kde" ];
+      "org.freedesktop.impl.portal.AppChooser" = [ "kde" ];
+    };
+  };
+
 
 }

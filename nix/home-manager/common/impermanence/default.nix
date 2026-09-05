@@ -9,10 +9,12 @@
     # ./keepassxc.nix
     ./flatpak.nix
     ./chrome.nix
+    ./fcitx5.nix
+    ./restic.nix
   ];
 
   # put these dirs on a different paths for isolation
-  home.persistence."/nix/persist/data" = {
+  home.persistence."/persist/data" = {
     directories = [
       "Documents"
       "Downloads"
@@ -29,12 +31,17 @@
   };
 
   # store the caching
-  home.persistence."/nix/persist/cache" = {
+  home.persistence."/persist/cache" = {
     directories = [
       ".cache/mesa_shader_cache"
       ".cache/mozilla"
       ".cache/flatpak"
       ".cache/google-chrome"
+      ".cache/chromium"
+      ".cache/rofi"
+
+      # we might not need to store restic cache
+      # ".cache/restic"
     ];
   };
 

@@ -3,6 +3,7 @@
 
   fileSystems."/nix".neededForBoot = true;
   fileSystems."/home/arch".neededForBoot = true;
+  fileSystems."/persist".neededForBoot = true;
   fileSystems."/".neededForBoot = true;
 
   # secure boot

@@ -110,13 +110,9 @@
   home.sessionVariables.GIT_CONFIG_GLOBAL = "${config.home.homeDirectory}/.shell/gitconfig";
 
 
-  home.persistence."/nix/persist/shell" = {
+  home.persistence."/persist/shell" = {
     directories = [
       ".shell"
-    ];
-    files = [
-      # the demenu in sway uses this to show most used app
-      ".cache/menu_usage_log"
     ];
   };
 

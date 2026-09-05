@@ -6,6 +6,7 @@
     ../common/shell.nix
     ../common/theme.nix
     ../common/impermanence
+    ../common/use_wayland.nix
   ];
 
   home.username = "arch";
@@ -16,4 +17,9 @@
 
   # stop warp cli from asking for tos
   home.file.".local/share/warp/accepted-tos.txt".text = "yes";
+
+  # default browser
+  home.sessionVariables.BROWSER = "firefox";
+
+
 }

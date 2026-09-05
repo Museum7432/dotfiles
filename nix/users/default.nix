@@ -9,9 +9,10 @@
       isNormalUser = true;
       uid = 1000;
       extraGroups = ["arch" "wheel" "networkmanager" "video" "audio" "input" "kvm"];
+      home = "/home/arch";
       # initialPassword = "test";
       # will change latter
-      # hashedPasswordFile = "/nix/persist/passwords/arch";
+      # hashedPasswordFile = "/persist/passwords/arch";
     };
   };
 

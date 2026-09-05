@@ -6,6 +6,5 @@
     pavucontrol
     profile-cleaner
     vlc
-    xeyes
   ];
 }

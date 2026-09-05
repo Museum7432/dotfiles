@@ -5,14 +5,17 @@
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu wofi --show=drun -i
 
-set $bemenu_cmd bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20
-set $menu_cmd_prefix j4-dmenu-desktop --dmenu='$bemenu_cmd' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log
+
+
+
+# set $bemenu_cmd bemenu -b -W 0.3 -i --nb \#3f3f3f --nf \#dcdccc --fn pango:DejaVu\ Sans\ Mono\ 10 --line-height 20
+# set $menu_cmd_prefix j4-dmenu-desktop --dmenu='$bemenu_cmd' --term='alacritty' --no-generic --usage-log=$HOME/.cache/menu_usage_log
 
 
 
 
 
-set $menu_cmd $menu_cmd_prefix -I
+# set $menu_cmd $menu_cmd_prefix -I
 # set $menu_cmd_ivpn_tunnel $menu_cmd_prefix --wrapper="swaymsg exec yes | ivpn exclude" --skip-i3-exec-check
 
 # set $menu_cmd_mullvad_tunnel $menu_cmd_prefix --wrapper="mullvad-exclude" --skip-i3-exec-check
@@ -20,10 +23,15 @@ set $menu_cmd $menu_cmd_prefix -I
 
 # set $menu_cmd_ivpn_tunnel $menu_cmd_prefix | xargs swaymsg exec ivpn exclude --
 
-set $menu "if ! pidof -x j4-dmenu-desktop >> /dev/null; then $menu_cmd; fi"
+# the same as wofi --show=drun --cache_file=${HOME}/.shell/wofi_cache --term=alacritty --insensitive=true --gtk_dark=true
+# set $menu_cmd wofi -S drun -k ${HOME}/.shell/wofi_cache -t alacritty -i -G
+#
+# if menu is already launched, don't launch it again
+# set $menu "if ! pidof -x rofi >> /dev/null; then $menu_cmd; fi"
 
 # Start your launcher
-bindsym $mod+d exec $menu
+# bindsym $mod+d exec $menu
+bindsym $mod+d exec "pidof -x rofi || rofi -show combi -modes combi -combi-modes 'window,drun,run' -cache-dir ~/.cache/rofi -terminal alacritty -theme android_notification"
 
 # for ivpn
 # bindsym $mod+Shift+d exec $menu_cmd_ivpn_tunnel
@@ -32,4 +40,6 @@ bindsym $mod+d exec $menu
 # bindsym $mod+Shift+d exec $menu_cmd_mullvad_tunnel
 
 # todo: restyle this latter
-bindcode $mod+47 exec "cliphist list | $bemenu_cmd | cliphist decode | wl-copy"
+# set $paste_menu wofi -d -k /dev/null --no-actions -M fuzzy -i -G
+# set $paste_menu "rofi -dmenu  -theme android_notification"
+bindcode $mod+47 exec "cliphist list | rofi -dmenu -theme android_notification | cliphist decode | wl-copy | wl-paste"

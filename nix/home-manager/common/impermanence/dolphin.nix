@@ -4,6 +4,7 @@
     kdePackages.dolphin
     kdePackages.qtsvg
     kdePackages.baloo
+    kdePackages.ark
   ];
 
   programs.plasma.enable = true;
@@ -40,7 +41,7 @@
     };
   };
 
-  home.persistence."/nix/persist/dolphin" = {
+  home.persistence."/persist/dolphin" = {
     directories = [
       ".config/session"
       ".local/share/baloo"

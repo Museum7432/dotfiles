@@ -4,7 +4,7 @@
     kdePackages.okular
   ];
 
-  home.persistence."/nix/persist/okular" = {
+  home.persistence."/persist/okular" = {
     files = [
       ".config/okularpartrc"
       ".config/okularrc"

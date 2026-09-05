@@ -7,7 +7,7 @@
   ];
 
   # the basics for booting
-  environment.persistence."/nix/persist/system" = {
+  environment.persistence."/persist/system" = {
     hideMounts = true;
     directories = [
       "/var/log"

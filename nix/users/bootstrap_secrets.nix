@@ -1,4 +1,4 @@
-# generate secrets in /nix/persist/<user> folder, will ignore if file already exist
+# generate secrets in /persist/<user> folder, will ignore if file already exist
 # default user password is "test", change it after boot
 # default gnome keyring password is random (just cat it after boot).
 # gnome_keyring.nix will use this file to unlock on startup
@@ -11,7 +11,7 @@
 let
   user = "arch";
   user_id = "1000";
-  dir = "/nix/persist/secrets/${user}";
+  dir = "/persist/secrets/${user}";
   loginPw = "${dir}/login-hash";
   keyringPw = "${dir}/keyring-password";
 in
@@ -21,17 +21,32 @@ in
     text = ''
       install -d -m 0711 -o 0 -g 0 ${dir}
 
-      if [ ! -s ${loginPw} ]; then
+
+      pw_file=${dir}/login-hash
+
+      if [ ! -s $pw_file ]; then
         echo 'test' \
-          | ${pkgs.mkpasswd}/bin/mkpasswd -m sha-512 -s > ${loginPw}
-        chown 0:0 ${loginPw}
-        chmod 0600 ${loginPw}
+          | ${pkgs.mkpasswd}/bin/mkpasswd -m sha-512 -s > $pw_file
+        chown 0:0 $pw_file
+        chmod 0600 $pw_file
       fi
 
-      if [ ! -s ${keyringPw} ]; then
-        ${pkgs.openssl}/bin/openssl rand -base64 48 | tr -d '\n' > ${keyringPw}
-        chown 0:${user_id} ${keyringPw}
-        chmod 0440 ${keyringPw}
+      keyring_pw_file=${dir}/keyring-password
+      if [ ! -s $keyring_pw_file ]; then
+        ${pkgs.openssl}/bin/openssl rand -base64 48 | tr -d '\n' > $keyring_pw_file
+        chown 0:${user_id} $keyring_pw_file
+        chmod 0440 $keyring_pw_file
+      fi
+
+      # storing credentials for restic
+      restic_env_file=${dir}/restic.env
+      if [ ! -s $restic_env_file ]; then
+
+        # echo "# restic env placeholder file" > $restic_env_file
+
+        echo -e "# placeholder file\nexport AWS_ACCESS_KEY_ID=\nexport AWS_SECRET_ACCESS_KEY=\nexport RESTIC_REPOSITORY=\nexport RESTIC_PASSWORD=" > $restic_env_file
+        chown 0:${user_id} $restic_env_file
+        chmod 0440 $restic_env_file
       fi
     '';
   };

@@ -5,7 +5,7 @@
     firefox
   ];
 
-  home.persistence."/nix/persist/firefox" = {
+  home.persistence."/persist/firefox" = {
     directories = [
       ".config/mozilla"
     ];

@@ -7,7 +7,7 @@
     };
   };
 
-    home.persistence."/nix/persist/keepassxc" = {
+    home.persistence."/persist/keepassxc" = {
       directories = [
         ".local/share/keyrings"
         ".local/share/pki"

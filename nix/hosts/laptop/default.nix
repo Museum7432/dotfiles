@@ -2,11 +2,12 @@
 {
   imports = [
     ./hardware.nix
-    ../common/only_hibernation.nix
-    (import ../common/limits.nix { username = "arch"; })
+    ./disko.nix
+    ./boot.nix
 
-    # ./disko.nix
-    # ./boot.nix
+
+    (import ../common/limits.nix { username = "arch"; })
+    ../common/only_hibernation.nix
   ];
 
   system.stateVersion = "26.05";
@@ -28,4 +29,6 @@
   hardware.amdgpu.initrd.enable = true;
   hardware.amdgpu.opencl.enable = true;
 
+  # we don't need this on a laptop
+  systemd.services.NetworkManager-wait-online.enable = false;
 }

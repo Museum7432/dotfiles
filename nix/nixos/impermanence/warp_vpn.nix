@@ -10,7 +10,7 @@
   };
 
 
-  environment.persistence."/nix/persist/warp_vpn" = {
+  environment.persistence."/persist/warp_vpn" = {
     hideMounts = true;
     directories = [
       "/var/lib/cloudflare-warp"
